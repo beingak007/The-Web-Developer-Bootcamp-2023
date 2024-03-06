@@ -1,0 +1,374 @@
+Section-10:Responsive CSS and Flexbox -> 23/11/2023
+
+104. What on Earth Is Flexbox?
+1. What is it?
+->Flex is a one-dimensional layout method for laying out items in rows and columns.
+->Flexbox is newer part of css.
+->it is series of properties used to layout boxes on a page.
+->Distributng space inside a container.
+->we can create flexible layouts.
+
+
+2. It's New(ISH)
+->Flexbox is a recent addition to css included to address common layout frustrations.
+
+3. Why 'Flex'?
+Flexbox allows us to distribute space dynamically across elements of an unknown size. hence the term 'flex'.
+
+
+105. Flex-Direction
+->flex box has 10 properties.
+1. Display Property
+->display:flex; ->Flexbox property on container.
+
+105.1 The Flex Model
+
+            _________________
+           |      main axis  |
+           | <-------------->|
+           |                 |
+           |_________________|
+
+->When we designate a some box or container.
+when we set to display flex in that box there are two axes.
+1. Cross Axis -> veritcal line   
+2.  Main axis -> horizontal line 
+->main axis goes from left to right.
+
+->main axis is depends on flex-drection.
+if flex-direcition:row then main axis is horizontal  line and cross axis is vertical line.
+if flex-direction:column then main axis is vertical line and cross axis is horizontal.
+
+2. Flex Direction
+->Flex direction allows to decide on the main axis direction in our container.
+->the default is flex-direction:row;
+
+1. flex-direction:row;
+->ts makes main axis go from left to right.
+
+2. flex-direction:row-reverse
+->its makes main axis go from right to left.
+
+3. flex-direction:column;
+->Main axis goes from top to bottom.
+
+4. flex-direction:column-reverse;
+->Main axis goes from bottom to top.
+
+->if height is increased then content in box grows.
+->flex-direcition property determines how the content flows in the container.
+
+eg:
+#container {
+    background-color: #003049;
+    width: 90%;
+    height: 500px;
+    margin:  0 auto ;
+    border: 5px solid #003049;
+    display:flex;
+    /* flex-direction: row-reverse; */
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+}
+
+106 Justify-Content
+->it determines how the content is distributed across the main axis.
+->the deafult value is flex-start for justify-content property.
+
+1. justify-content:flex-start;
+->if main axis goes from left to right the start is on the left.
+
+2. justify-content:flex-end;
+->it takes the content and move it to the end of the main axis.
+
+
+3. justify-content:center;
+->this will center our content 
+
+4. Justify-content:center;
+->centered along the main axis.
+
+5. Justify-content:space-between;
+->taking extra space and distributing among the elements but not on the edges.
+->not between the container and element.
+
+6. Justify-content:space-evenly;
+->space is even between every element and between the elements and the container.
+
+
+->Justify-content is not horizontaly or veritcally.
+->it can be either depending on flex direction.
+
+107. Flex-Wrap
+->it determines wheather the element going to wrap along the main axis on to new line or a new column if it's a vertical main axis.
+
+eg:
+flex-wrap:wrap-reverse;
+flex-nowrap
+
+108. Align-Items
+->Align items distribute space or distribute items along cross axis.
+->align items on cross axis.
+->it is always vertical space.
+
+
+->justyfy-content is on main axis. align items on cross axis.
+
+1. Align-items: flex-start
+->it will align beginning of the cross axis.
+->the default cross axis top to bottom.
+->main axis in a row goes from left to right.
+
+2. Align-item:flex-end;
+->it will align at the end of the cross axis.
+
+3. Align-item:center;
+->it will align at the center of the cross axis.
+
+4. Align-item:center
+->it will align at base line
+
+
+109. Align-Content & Align-Self
+
+1. Align-content
+->Align contet which is used to control or distribute space along the cross axis only when we have multiple rows and columns depending on if we're in a row or column-based layouts.
+
+->if we are in columns align-content contols space between those columns.
+->if we are in rows main axis is left to right and righ to left and the cross axis is vertical which controlling space between the rows.
+->we can use 
+align-content:space-between;
+align-content:flex-start;
+
+->The CSS align-content property sets the distribution of space between and around content items along a flexbox's cross-axis or a grid's block axis.
+->space between rows and space between content depending the oreintation of cross axis. it does nothing if flex-wrap is turned off.
+
+->if we have one row and flex wrap turned off align content do nothing.
+
+2. Align-Self
+->it is similar to align items.
+->it is not applied to flex container itself but to individual elements we can change the alignment along
+the cross axis for single element using it.
+
+
+eg:
+#container {
+ flex-direction: row;
+ justify-content: center;
+ align-items: flex-start;
+ flex-wrap:wrap;
+}
+
+ div:nth-of-type(3){
+   align-self: center;
+}
+
+
+110. Flex-Basis, Grow, & Shrink
+
+->Three related properties that have to do with individual items in a flex container how they grow and shrink when there is available space.
+
+1. Flex-Basis
+->Defines the intial size of an element before additional space is distributed.
+->flex basis is along the main axis.
+
+eg:
+#container div{
+    width: 200px;
+    height:200px;
+    text-align: center;
+    flex-basis: 200px;
+    align-content: center;
+}
+
+
+
+2. Flex-Grow
+->Controls the amount of available space an element should take up.
+->Accepts a unit-less number value.
+
+->elements eats the available space.
+->it takes all additional space.
+->its all about proportions
+eg:
+ /* flex grow */
+  /* div:nth-of-type(1){
+    flex-grow: 2;
+  }
+  div:nth-of-type(5){
+    flex-grow: 2;
+  }
+  div:nth-of-type(3){
+    flex-grow: 3;
+  } */
+
+  ->set min or max width when page is minimized or maximized the width get fixed to it.
+
+3. Flex-Shrink
+->if items are larger than the container they shrink according to the flex shrink.
+
+->it governs the rate that elements shrink when there is not enough space in the container.
+
+111. Flex Shorthand
+The flex CSS shorthand property sets how a flex item will grow or shrink to fit the space available in its flex container.
+
+->Two values: flex-grow | flex-basis 
+flex: 1 30px;
+
+->Two values: flex-grow | flex-shrink 
+flex: 2 2;
+
+->Three values: flex-grow | flex-shrink | flex-basis 
+flex: 2 2 10%;
+
+
+
+112. Responsive Design & Media Queries Intro
+
+1. THE PROBLEM
+As mobile devices and tablets
+became widely available,
+developers had a problem...how do
+we create websites that look good
+on all screen sizes?
+
+2.ONE APPROACH
+Early on, it was common to create
+separate stylesheets for different
+devices, or even completely
+different websites for each size.
+
+3.ENTER RESPONSIVE
+These days, we typically create ONE
+website and stylesheet that is able
+to respond to different device sizes
+and features.
+
+eg:
+reddit.com or m.reddit.com, google.com or m.google.com
+
+1. Responsive Design
+->it refers to basically maiking a website that is   able to respond to the device. Wheather that is screen size, mobile phone, super large monitor  or oreintation of the device.
+es?
+
+2. Media Queries
+->Media queries allow us to modify our
+styles depending on particular
+parameters like screen width or
+device type.
+
+->Media Queries are features sor things that we can write in our CSS, in our style sheets that allow us
+to change our styles or add new styles depending on some parameters like screen width or device type or device oreintation, landscape vs portrait.
+->eg:
+if device is in potrait mode or landscape mode on phone then display this or hide it.
+
+eg:
+@media(max-width:800px){
+    .sidebar{
+        display:none;
+    }
+    .main{
+        width:80%;
+    }
+
+}
+
+->Open toggle device tool bar by click on inspect.
+
+113. The Power of Media Queries
+->Media queries are the main mechanism that we can use to make a responsive website, to restyle things or remove things, show and hide, change their sizes, fo from row to column based upon an attribute of the 
+browser.
+
+eg:
+1. When width is exactly 800px h1 should be in purple color. 
+@media(max-width:600px){
+  h1{
+    color:purple;
+  }
+}
+
+2. when width is between 600px to 800px hq1 should be in purple.
+@media(min-width:600px)and (max-width:800px){
+    h1{
+      color:purple;
+    }
+}
+
+
+3. 2nd Query wins
+
+  @media(min-width:500px){
+    h1{
+        color:red;
+    }
+  }
+
+  @media(max-width:1000px){
+    h1{
+        color:orange;
+    }
+  }
+
+3. case of 3 Queries
+->h1 will be red upto 500px after 500px it turns to ornage upto 1000px after that it turns to yellow upto 1500px
+
+@media(max-width:1500px){
+    h1{
+        color:yellow;
+    }
+}
+@media(max-width:1000px){
+    h1{
+        color:orange;
+    }
+}
+@media(max-width:500px){
+    h1{
+        color:red;
+    }
+}
+
+4. Oreintation landscape
+->Click on toggle device tool bar->select phone ->select landscape
+
+@media(orientation:landscape){
+    body{
+        background-color: rgb(0, 255, 191);
+    }
+}
+
+
+114. Building a Responsive Nav
+
+->home button to left.
+->sign up to right.
+->Learn more about in center.
+->stack up everything when we minimize the browser.
+
+
+
+->we can have nested flex box.
+eg:
+ul{
+    border:1px solid red;
+    flex:1;
+    max-width: 50%;
+}
+
+->check this site:
+https://devfacts.com/media-queries-breakpoints-2023/
+
+=>Using min-width
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+

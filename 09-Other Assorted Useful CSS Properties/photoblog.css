@@ -1,0 +1,22 @@
+img{
+    width:30%;
+    margin:20px;
+    border-style:inset;
+    border-width: 4px;
+    border-color:rgb(0, 0, 0);
+}
+body{
+    background-color:antiquewhite;
+    border: 2px solid black;
+}
+
+h1{
+    margin-left: 20px;
+}
+
+img:hover{
+   width:500px;
+   cursor: pointer;
+   transform:scale(0.5);
+   
+}

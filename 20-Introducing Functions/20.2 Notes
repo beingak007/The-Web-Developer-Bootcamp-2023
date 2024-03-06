@@ -1,0 +1,180 @@
+20-Introducing Functions    12/12/2023
+
+208. Intro to Functions
+->Fuctions are reusable chunks of code.
+->Functions are reusable procedures.
+->Functions allows us to write resuable, modular code.
+->we define a chunk of code that we can then execute at a later point.
+
+eg: rolling die with different sides.
+
+
+209. Our Very First Function
+1. Writing fuction and use them.
+->two step process
+a. Define the fuction
+b. Running a fuction
+->fuction runs when we execute it.
+
+->There are multiple ways to define a fuction.
+
+a. Defining a fuction
+->Syntax of fuction
+
+fuction funcName(){
+    //do something or logic
+}
+
+b. Running or executing fuction
+-> funName(); //run once
+-> funName(); //run again
+
+
+eg-1:
+//defining fuction
+fuction singsong(){
+    console.log("Hello");
+    console.log("World");
+    console.log("Welcome);
+}
+
+//executing fuction
+singSong()
+functions.js:2 Hello
+functions.js:3 World
+functions.js:4 Welcome
+
+->In general a fuction should call after defining it.
+->define fuction before you use them.
+
+
+
+210. Arguments Intro
+1. Arguments - inputs to a fuction
+->we can also write fuctions that accept inputs called arguments.
+->Every method is a function.
+
+
+1.1 Simple fuctions accepts zero inputs.
+
+greet() ----->function----> "Hi"
+
+eg-:
+fuction greet(){
+    console.log("Hi"); 
+}
+
+1.2 Some funtions accept arguments.
+
+greet('Tim') ----->function----> "Hi Tim"
+arg(20,25)   ----->function----> 22.5
+
+eg-1:
+let arr=[1,2,3];
+arr.push(4,5,6);
+arr -> [1, 2, 3, 4, 5, 6]
+
+eg-2:
+->greet accepts the preson.
+->person is argument for this function.
+
+function greet(person){
+    console.log(`Hi, ${person}!`);
+}
+
+greet("Ashish");
+// output: Hi, Ashish!
+
+->if argument is not given then it results undefined.
+
+eg-1:
+
+function greet(person){
+    console.log(`Hi, ${person}!`);
+}
+
+greet()
+// Output: Hi, undefined!
+
+
+211. Functions With Multiple Arguments
+->Fuctions accepts more than one arguments.
+
+eg-1:
+function greet(firstname, lastname){
+    console.log(`hello, ${firstname} ${lastname[0]}`)
+}
+
+greet('Ashish','Paul'); //-> hello, Ashish P
+
+->Arguments can be ignored but they should not used in code.
+
+
+212. The Return Keyword
+->Built-in methods return values when we call them.
+->We can store those values.
+->Return keyword statements ends the fuction execution  and specifies the value to be returned by that function.
+
+
+
+1. No Return 
+->it prints values out, but do not return anything.
+// ->value is not given to sum for Storing.
+
+// eg-1:
+// function add(x,y){
+//     console.log(x+y);
+// }
+
+
+// let sum=add(9,1); //->10
+// sum               //->undefined
+// ->here sum is undefined.
+
+
+// eg-2:
+// ->here the value is Captured placed in r1 variable.
+// let r1=Math.random();
+// r1 -> 0.9615917526887694
+
+2. First return
+->now we can capture a return value in a variable.
+
+eg-1:
+function add(x,y){
+    return x+y;
+ }
+ const sum=add(10,20);
+ sum  //Output:30
+
+
+
+=>Return keyword statements ends the fuction execution  and specifies the value to be returned by that function.
+
+eg-1:
+ function add(x,y){
+    return x+y;
+    console.log("it will not get executed"); //this line will never run
+ }
+
+
+->At return statement code stop executing.
+
+eg-2:
+function add(x,y){
+    if(typeof x!== 'number' || typeof y!=='number'){
+        return false;
+    }
+    let sum=x+y;
+    return sum;
+ }
+
+add(5,'a') -> false
+add(5,5)   -> 10
+
+-> we can only return one thing. it could be an array, object, value
+
+return x+y;         ->valid
+return x y;         ->not valid
+return [5,5]        ->valid
+return [5,5] [5,6]; ->not valid

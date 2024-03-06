@@ -1,0 +1,29 @@
+Section-10:Responsive CSS and Flexbox
+=>What Matters In This Section?
+->Flex box->it is useful to laying out elements, hading space, sharing space, distributing space to make a web page.
+
+
+
+
+=>Crucial
+->Media Queries
+->Focus on concept, not memorizing the properties.
+->Flex shorthand
+->Flex-basis, grow and shrink
+->align-items
+->Flex-wrap 
+->Align-content and align-self
+->Justify content
+->Flex-Direction
+
+
+
+=>Important
+
+
+=>Nice to Have
+
+
+
+green->shorter topics
+yellow->longer topics

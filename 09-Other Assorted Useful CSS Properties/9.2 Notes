@@ -1,0 +1,228 @@
+Section-9: 09-Other Assorted Useful CSS Properties
+93. Opacity and The Alpha Channel
+1. Alpha channel- this governs the transparency of the color.
+->How see through is the color.
+-> it's a value from 0 to 1.
+->range 00 to ff in hex decimal number system
+->rgba(0,209, 112, 0.5)
+->In Apha channel only background get impacted.
+->In opacity whole content and backgroud get impacted.
+
+
+rgba -> 0,    209,     112,      0.5
+       red   green     blue     alpha
+
+eg-1:
+#rgba{
+    width: 50%;
+    height:50%;
+    background-color: rgba(255,255,255,0.7);
+}
+-> it only effects the background color.
+
+2. Opacity
+->The opacity property specifies the opacity/transparency of an element.
+->it is property which is set on element it governs the entire element's transparency including it's content and desendenets.
+
+opacity:0; -> The element is fully transparent (that is, invisible).
+
+opacity:between 0 to 1 -> The element is translucent (that is, content behind the element can be seen).
+
+opacity:1(defaut value)-> The element is fully opaque (visually solid).
+
+
+
+
+eg-1:
+#opacity{
+    width:50%;
+    height:50%;
+    background-color: rgba(127, 255, 212, 0);
+    opacity: 0.6;
+}
+
+->In Apha channel only background get impacted.
+->In opacity whole content and backgroud get impacted.
+
+94. The Position property
+->The position CSS property sets how an element is positioned in a document. The top, right, bottom, and left properties determine the final location of positioned elements.
+->refer to docs 
+
+1. position:static;
+->The element is positioned according to the normal flow of the document. The top, right, bottom, left, and z-index properties have no effect. This is the default value.
+->if element is positioned static then there will no effect.
+
+eg-1:
+#static #middle{
+    position: static;
+    top:100px;
+}
+
+2. positon:relative
+->The element is positioned according to the normal flow of the document, and then offset relative to itself based on the values of top, right, bottom, and left.
+->element is placed relative to normally it is palaced.
+eg-1:
+#relative #middle{
+    position: relative;
+    top: 100px;
+}
+
+3. position:absolute
+->The element is removed from the normal document flow, and no space is created for the element in the page layout. The element is positioned relative to its closest positioned ancestor (if any) or to the initial containing block. Its final position is determined by the values of top, right, bottom, and left.
+
+eg:
+/* relative to anscetor */
+
+#absolute{
+    position: relative;
+}
+
+#absolute #middle{
+    position:absolute;
+    top:50px;
+    left:50px;
+  
+}
+
+4. Position: fixed
+The element is removed from the normal document flow, and no space is created for the element in the page layout. The element is positioned relative to its initial containing block, which is the viewport in the case of visual media. Its final position is determined by the values of top, right, bottom, and left.
+
+eg-1:
+#fixed #middle{
+    position: fixed;
+    top:0;
+    left:0
+
+}
+
+->it is fixed to the top.
+
+=>Application
+->we can make nav bar that stay while we scroll.
+
+
+95. CSS Transitions
+->Transition allows to animate the transition of one property value to another property value.
+->Trasition
+1. Property name
+
+2. Duration -> how long that property to take transition.
+
+3. Timing fuction 
+eg:
+transition: backgroud-color 3s;
+->only border changes fast and background color takes time.
+
+4. Delay
+eg-1:
+transition:background-color 2s 1s;
+->2  sec delay to change or transition.
+
+eg-1:
+
+->transition:1s; ->trasition takes place in 1 second.
+
+->html code
+ <h1>Transitions</h1>
+ <div class="circle"></div>
+
+
+->css code
+.circle{
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    transition:background-color 2s 1s;
+    
+}
+
+.circle:hover{
+    background-color: chartreuse;
+    border-radius: 50%;
+}
+
+
+->single out transition.
+
+96. The Power of CSS Transforms
+->The transform CSS property lets you rotate, scale, skew, or translate an element. It modifies the coordinate space of the CSS visual formatting model.
+
+->we can rotate,scale,skew etc move things across the page.
+
+->rotate()
+Rotates an element around a fixed point on the 2D plane.
+eg:
+ transform: rotate(45deg);
+
+->scale()
+Scales an element up or down on the 2D plane.
+eg:
+ transform:scale(0.5);
+ transform: scaleX(0.5);
+
+ ->translate()
+Translates an element on the 2D plane.
+eg:
+    transform:scale(0.5); 
+    transform: translateX(-20px);
+
+->skew()
+Skews an element on the 2D plane.
+eg:
+  transform: skew(10deg,22deg);
+
+->Apply multiple transform properties at a time element.
+->it is applied to parent and content.
+
+97. Fancy Button Hover Effect Code Along
+ box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+ transform: translateY(-0.2em);
+ cursor: pointer;
+
+
+98. The Truth About Background
+1. backfround image
+->check unsplash for free images.
+
+->Inserting backgroud images
+background-image: url("https://images.unsplash.com/photo-1700493624764-f7524969037d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D");
+
+
+2. background size
+background-size: cover;  -> it covers whole background.
+
+3. background repeat
+->for not repeating image.
+background-repeat: no-repeat;
+
+4. background position
+The background-position CSS property sets the initial position for each background image. The position is relative to the position layer set by background-origin.
+->background-position: 30%;
+
+eg-1:
+    background: center/90% url("https://images.unsplash.com/photo-1700493624764-f7524969037d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D"), blanchedalmond ;
+    background-repeat: no-repeat; 
+
+99. Google Fonts is Amazing
+->its enables to use all sorts of fonts.
+->we can inclue font file in html document.
+
+->check this site
+https://fonts.google.com/
+
+->Chose the font and add what you want.
+->click on selected font.
+->click on embed and copy link. css rule also visible.
+->Place it in html document.
+
+eg:
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+102. Photo Blog CodeAlong Pt. 2
+->there will white space between images and spans.
+
+
+
+   

@@ -1,0 +1,294 @@
+Section-14: JavaScript Basics  28/11/23
+143. Why JavaScript is Awesome
+The 
+Pruple css - Adjectives
+Dino   HTML- Nouns
+Danced JS  - Verbs
+
+
+
+144. Primitives & The Console
+1. Learn JS on its own. No HTML/CSS.
+2. Use JS to manipulate HTML/CSS.
+
+1. Primitive Types in JS - Type of information stored and handled.
+The Basic Building Blocks
+1. Number
+2. String
+3. Boolean
+4. Null
+5. Undefined
+
+->technically there are two other primitive type: Symbol and BigInt. or Big integer
+->they are used less.
+
+
+=>Running code in the Console
+->run code using chrome developers tools console.
+->Then learning how to write external scripts.
+->Inspect->Console 
+->use clear the console.
+
+->REPL -> Read Evaluate Print Loops
+
+145. JavaScript Numbers
+->js has one number type
+->Positive Numbers
+->Negatives Numbers
+->Whole Numbers(integer)
+->Decimal Numbers
+
+->we have one type that includes positive, negative, Whole and decimal numbers.
+->other languages have more number types like int, float, long and double.
+
+example
+// Addition
+50+5
+55
+// Multiplication
+1111*7
+7777
+
+//division
+50/2
+25
+
+//Modulo
+50%2
+0
+
+
+//Power
+2**4
+
+PEMDAS -> 
+parenthesis 
+Exponents
+Multiplication
+division
+Addition
+substraction
+
+
+Comments -> used to explain code.
+
+
+
+146. What is NaN?
+1. NaN-is a numeric value that represents something that is not a number.
+
+->it is not a number but it is considered as number.
+->Type of operator -> 
+eg: typeof 4 ->number
+
+eg:
+0/0 -> NaN
+typeof NaN -> 'number'
+
+1+NaN ->NaN
+
+NaN*3 ->NaN
+
+
+147. Quick Numbers Quiz
+1. 4+3*4/2 -> 10
+2. (13%5)**2
+3. 200+0/0 -> NaN
+
+
+
+148. Variables & Let
+1. Variables are like labels for values.
+->we can store a value and give to it a name so that we can
+a. Refer back to it later
+b. Use that value to do stuff
+c. or change it later one
+
+Systax:
+
+Let someName = value;
+
+eg:
+let year=1985;
+
+->no need to have semi-colon in console.
+
+
+Recaling values
+eg-1: let year=1999;
+      year;
+
+eg-2:
+let a=10;
+undefined
+let b=20
+undefined
+a
+10
+b
+20
+a+b
+30
+
+
+149. Updating Variables
+
+Example-1:
+let score=0;
+score=score+5;
+5
+score=score+5
+10
+score=score+5
+15
+score=score+5
+20
+score=score+5
+25
+score=score+5
+30
+score=score+5
+35
+
+Example-2:
+let score=30;
+score=score+5
+35
+score-=5;  //decrement by 5
+30
+
+Example-3:
+let numLives=9;
+numLives--; // numLives=numLives-1;
+
+
+
+150. Increment Operator Explanation: i++ vs ++
+1. Post Increment Operator: i++
+->it returns the current value and then increments.
+eg:
+let i=0;
+i++
+0
+i
+1
+
+2. Pre-Increment or Pre-fix Operator: ++i
+->it increments the value first and then returns.
+eg:
+let i=0;
+++i;
+1
+i
+1
+
+
+151. Const & Var
+->there are two other keywords we can use to make Variables
+1. const keyword- 
+->it works just like let, except you cannot change the value.
+->js preventing from updating.
+Example-1:
+const a=10;
+a=50; //error
+
+const age=17;
+age=age+1; //error
+
+example-2:
+const a=10;
+undefined
+a+10;
+20
+
+
+Whys use const?
+->not allowing variable to change.
+->Making variable constant.
+eg:
+const pi=3.14159;
+const dayInWeek=7;
+
+->once arrays and objects are covered then const makes sense over let.
+
+2. var keyword-
+->before let and const, var was the only way of declaring variable. these days there isn't really reason to use it.
+->The old way of making variable.
+
+->Why let and const are introduced?
+
+->let allows us to make a variable that we can reassign.
+->const makes a variable that is a constant value.
+
+
+152. Booleans
+-> Booleans are used to store two values yes or no.
+-> Booleans are very simple. you have two possible options: true or false.
+
+example-1:
+let isLoggedIn=true;
+let gameOver=false;
+const isWaterWet=true;
+
+->true or flase are lower case.
+
+2. Variables can change Types
+->we can store number and then boolean values.
+->it doesn't make sense.
+->in other porgramming languages we can only store same type of data in variable.
+
+Example-1:
+let num=23;
+num=true;
+true
+num
+true
+num=86;
+86
+num
+86
+
+
+typescript->
+it restricts to variable to store only same type of values.
+
+
+153. Variable Naming and Conventions
+1. spaces are not allowed while naming varaibles.
+eg:
+let hello world; -> not allowed
+2. variable name can't start with numbers.
+eg:
+let 1user=10; -> not allowed
+
+3. Identifiers are case sensitive they can contain letters, $, _ and disgits(0-9).
+eg:
+let _user=10;
+_user
+10
+
+4. Most frequently we see variables lower camel cased.
+eg:
+let current_date;
+let currentDate;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

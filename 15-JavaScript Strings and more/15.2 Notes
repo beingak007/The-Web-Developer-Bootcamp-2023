@@ -1,0 +1,359 @@
+Section-10:Javascript Strings and more   28/11/2023
+
+155. Introducing Strings
+1. String- 
+->Strings are characters.
+->Strings are another primitive type in js. they represent text and must be wrapped in quotes.
+->we can use double quote and also single quote.
+
+example-1:
+let username="Ashish";  //Double quotes 
+let username='Ashish';  //Single quotes
+let username="Ashish'; -> not allowed
+
+let name="ashish"
+name
+'ashish'
+
+example-2:
+let s="let her 'go away' ";
+
+->it's fine to use either single or double quotes. just be consistent in your codebase.
+
+
+
+156. Indices & Length
+1. Inices
+-Strings are indexed.
+->each character has a corresponding index(a positional number).
+
+-> H E L L O
+-> 0 1 2 3 4
+
+2. Accessing String using indices
+
+->we can access individual characters based on indexes.
+eg:
+let animal="dog";
+animal[1]
+'o'
+
+3. Length of String
+->string has property called length.
+->it helps find the length of the string.
+
+
+eg-1:
+let a="ashish"
+a.length
+6
+
+eg-2:
+"ash".length
+3
+
+eg-3:
+"ashish"[1]
+'h'
+
+4. String concatenation
+->combining two strings.
+
+example-1:
+let a="ashish";
+let b="paul";
+a+b
+'ashishpaul'
+
+example-2:
+"ashish"+"paul" -> 'ashishpaul'
+
+let name="River";
+let name="river";
+
+-> both are different in memory.
+
+example-3: Adding string and number becomes string.
+1+"hi" -> '1hi'
+
+
+157. String Methods
+-> Methods are built-in actions we can perform with individual strings.
+->they help us do things like:
+1. searching within a string
+2. replacing part of a string
+3. Changing the casting of a string
+
+->these methods finds in chrome dev tools by typing string and "." then methods pops up.
+
+Syntax:
+thing.method()
+thing ->some string
+method()->name of the method
+
+1. Concat methods
+
+eg-:
+let a="Ashish"
+a.concat("Paul")
+'AshishPaul'
+
+2. Casing 
+
+Example-1: lower casing the string
+let a="ASHISH"
+undefined
+a.toLowerCase()
+'ashish'
+
+Example-2: Upper casing the string
+let m="ashish"
+undefined
+a.toUpperCase
+ƒ toUpperCase() { [native code] }
+a
+'ASHISH'
+
+
+3. Trim
+-> it trims off any white spaces.
+-> it removes the space left and right side.
+-> it doen't remove space in middle.
+
+eg-1:
+let greeting="    hello"
+greeting.trim()
+'hello'
+
+eg-2:
+"Ashish  ".trim(); -> 'Ashish'
+
+eg-3:it doen't remove space in middle.
+let a="her you go"
+undefined
+a.trim;
+ƒ trim() { [native code] }
+a
+'her you go'
+
+
+2. Method Chaining
+->applying multiple methods on one string.
+
+eg:
+let s="   hey here you go"
+s.trim().toUpperCase();
+'HEY HERE YOU GO'
+
+
+158. String Methods With Arguments
+->Some methods accept arguments that modify their behavior.
+->think them as inputs that we can pass in.
+->we pass these arguments inside of the parentheses.
+->Syntax:
+thing.method(arg)
+thingf  ->some string
+method()->name of the method
+arg     -> arguments
+
+1. indexOf Method
+->The indexOf() method of String values searches this string and returns the index of the first occurrence of the specified substring.
+->it returns index at which string is started.
+->it matches the first occurrence then gives the index of it.
+->if charcter or string is not present then it gives "-1".
+
+eg-1:
+let a='catdog'
+a.indexOf("cat")
+0
+
+eg-2: it matches the first occurrence then gives the index of it.
+
+hi how are   y  o  u
+012345678910 11 12 13
+
+"hi how are you".indexOf('o') ->4
+->In above sentence first occures at 4th index.
+
+2. Slice
+->The slice() method of String values extracts a section of this string and returns it as a new string, without modifying the original string.
+->end index is optional.
+
+Syntax:
+slice(indexStart)
+slice(indexStart, indexEnd)
+
+eg-1:slice(indexStart, indexEnd)
+"helloWorld".slice(0,5)
+'hello'
+
+eg-2:
+"HelloWorld".slice(5)
+'World'
+
+
+3. Replace
+->The replace() method of String values returns a new string with one, some, or all matches of a pattern replaced by a replacement.
+
+syntax:
+replace(pattern, replacement)
+or
+replace(searchValue, replaceValue)
+
+eg:
+let go="she goes to school";
+go.replace('she', 'he');
+'he goes to school'
+
+
+4. Repeat() Method
+The repeat() method of String values constructs and returns a new string which contains the specified number of copies of this string, concatenated together.
+
+eg:
+let a="happy christmas";
+a.repeat(5)
+'happy christmashappy christmashappy christmashappy christmashappy christmas'
+
+->Some methods no need inputs.
+->some methods ask for inputs.
+
+
+
+159. String Template Literals -SUPER USEFUL
+1. Template Literals
+->Template literals are strings that allow embedded expressions, which will be evaluated and then turned into a resulting string.
+
+->we use back-ticks not single quotes.
+->the back-tick key is usually above the tab key.
+->Expressions in curly braces are evaluated.
+
+eg:
+`I counted ${5+3} sheeps`
+'I counted 8 sheeps'
+
+eg-1:
+let product='phone'
+let price='25000'
+let qty='1'
+
+"you bought "+qty+" "+product+". Total is: "+price*qty
+'you bought 1 phone. Total is: 25000'
+
+`you bought ${qty} ${product}. Total is: $${price*qty}`
+'you bought 1 phone. Total is: 25000'
+
+
+160. Undefined & Null
+1. Null-
+->"Intentional absence of any value"
+->Must be assigned
+
+eg:
+-> no one is logged in yet...
+let loggedInUser=null; ->value explicitly nothing
+loggedInUser
+null
+
+->A user logs in...
+loggedInUser="Alan Rickman"
+'Alan Rickman'
+
+2. Undefined 
+->Variables that do not have an assigned value are undefined.
+->"I don't know the value"
+eg:
+->if varaible is created and not given value then it results in undefined.
+
+
+161. Random Numbers & The Math Object
+1. Math Object 
+-> math object contains properties and methods for mathematical constant and fuctions.
+->type Math and click enter. drop math then all methods will be visible.
+->read more on mdn.
+
+eg:
+->pi value
+Math.PI
+3.141592653589793
+
+->Rounding a number
+Math.round(4.9)
+5
+
+->Absolute value
+Math.abs(-456)
+456
+
+->Raises 2 to the 5th power
+Math.pow(2,2)
+4
+
+->Removes decimal
+Math.floor(3.5642258)
+3
+
+Math.ceil(25.69)
+26
+
+Math.floor(25.69)
+25
+
+2. Random Numbers
+->Math.random() gives us a random decimal between 0 to 1(non-inclusive).
+
+eg:
+Math.random()
+0.5173428308001873
+
+Math.random()
+0.3967123340402434
+
+Math.random()
+0.8385023136325058
+
+2.1 getting random whole Numbers
+->generating random number between 1 and 10
+eg:
+const step1=Math.random();
+step1;
+0.2825153654740955
+
+const step2=step1*10;
+step2
+2.825153654740955
+
+const step3=Math.floor(step2);
+step3
+2
+
+const step4=step3+1;
+step4
+6
+
+Alter
+->Generating random number from 1 to 5
+let randomNum=Math.floor(Math.random()*5)+1;
+randomNum
+4
+
+->Generating random number from 1 to 10
+let randomNum=Math.floor(Math.random()*10)+1;
+randomNum
+6
+
+->Generating random number from 1 to 100
+numbers start from 1
+let randomNum=Math.floor(Math.random()*100)+1;
+randomNum
+67
+
+->Generating random number from 20 to 22
+let randomNum=Math.floor(Math.random()*3)+20;
+randomNum
+20
+let randomNum=Math.floor(Math.random()*3)+20;
+randomNum
+22
+let randomNum=Math.floor(Math.random()*3)+20;
+randomNum
+21

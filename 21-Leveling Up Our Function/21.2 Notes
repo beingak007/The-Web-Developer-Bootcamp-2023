@@ -1,0 +1,432 @@
+21-Leveling Up Our Functions 13/12/2023
+
+214. Function Scope
+1. Scope - refers to variable visibility.
+->the location where a variable is defined dictates where we have access to that variable.
+
+->variable defined in fuction are scoped inside that fuction.
+
+1.1 We can access variable inside fuction when variable is defined inside fuction.
+eg-1:
+function collectEggs(){
+    let totalEggs=6;
+    console.log(totalEggs);
+}
+collectEggs(); //->Output:6
+
+1.2 we cannot access variable outside the fuction.
+// eg-1:
+function collectEggs(){
+    let totalEggs=6;
+    
+}
+collectEggs(); 
+console.log(totalEggs); //Output:totalEggs is not defined
+
+
+1.3 Access varaible inside fuction.
+eg-1:
+// eg-3:
+let totalEggs=0;          //-->Global variable
+function collectEggs(){
+    totalEggs=6;
+}
+
+console.log(totalEggs);   //it prints intial value of totalEggs.
+collectEggs();
+console.log(totalEggs);  //it prints value of totalEggsin function.
+
+eg-4: 
+->here msg is scoped to the help me fuction.
+function helpme(){
+    let msg="help me to carry my backpack";
+    msg;  //help me to carry my backpack
+}
+
+msg; // not defined!
+
+eg-5:
+let bird="sparrow";
+function birdwatch(){
+    let bird="king fisher";
+}
+
+birdwatch();
+
+
+215. Block Scope
+->If varaibles are declared inside of the block then they are scoped to block.
+->scope of variable is scoped to block.
+->block includes things like conditionals and loops.
+
+->when var Keyword is used our variable are scoped to functions but they are not scoped to blocks.
+
+eg-1:
+// ->here msg is scoped to if condtional Block.
+->msg cannot be accessed outside the if block.
+let radius=8;
+if(radius>0){
+    const pi=3.14;
+    let msg="hi";
+}
+
+console.log(radius);  // Output:8
+console.log(msg);     //Output: msg is not defined
+
+// eg-2:
+// ->here msg is scoped to for loop.
+for(let i=0;i<5;i++){
+    let msg="hello";
+    console.log(msg); //prints msg for  times
+}
+console.log(msg);     // msg is not defined
+
+
+eg-3:
+->when var Keyword is used our variable are scoped to functions but they are not scoped to blocks.
+
+for(let i=0;i<5;i++){
+    var msg="hello";
+    console.log(msg);  //prints msg 5 times
+}
+console.log(msg);      //output:hello
+
+
+216. Lexical Scope
+->lexical scope refers to the ability of a function scope to access variables from the parent scope.
+->An inner function nested inside of some parent function has access to the scope or to the variables to find in the scope of that outer function.
+->outer fuction will not have access to the inner fuction but inner fuction will have access to outer fuction.
+
+eg-1:
+->fuctions are nested.
+->inner() function access variable of outer() function.
+function outer(){
+    let hero="Jesus";
+
+    function inner(){
+        let cryForHelp=`${hero}, please save me!`;
+        console.log(cryForHelp);
+    }
+    inner();
+}
+
+outer();
+
+217. Function Expressions
+
+->fuctions can be stored in varible like numbers, strings, array, object etc.
+->function with no name is storing in an varaible.
+->arguments are passed using variable name.
+
+Suntax:
+let varaibleName=function(arguments){
+    //logic
+}
+
+eg-1:
+const sum=function(x,y){
+    return x+y;
+};
+
+------------------------
+function add(x,y){
+return x+y;
+}
+
+// add(5,5)  //Output:10
+
+eg-2:
+->sum is name of varaible
+const sum=function(x,y){
+    return x+y;
+};
+
+sum(5,5) //Output:10
+
+
+
+eg-3: 
+->fuction is stored in an varaible
+// const square=function(num){
+//     return num*num;
+// }
+// square(7);
+
+// In console ->square(5)
+// 25
+
+218. Higher Order Functions
+->Functions that operates on/with other functions.
+they can
+1. Accept other fuctions as arguments.
+2. Return a function.
+
+1. Accept other fuctions as arguments.
+->Passing function as argument to other fuction.
+
+eg-1:
+->callTwice() fuction accepts greet() as argument.
+
+function callTwice(func){
+    func();
+    func();
+}
+function greet(){
+    console.log("Hello");
+}
+
+callTwice(greet); // Output:2 Hello
+
+
+// eg-2:
+function callTwice(func){
+    func();
+    func();
+}
+function rollDie(){
+    const roll=Math.floor(Math.random()*6)+1;
+    console.log(roll);
+}
+
+callTwice(rollDie); 
+// Ouput:
+// 6
+// 4
+
+219. Returning Functions
+1. retrunning fuction as a value.
+
+// eg-1:
+function makeMysteryFunc(){
+    const randomNum=Math.random();
+    if(randomNum>0.5){
+        return function(){
+            console.log("you win!");
+        }
+    }
+    else{
+        return function(){
+            console.log("you lost");
+        }
+    }
+
+}
+// console.log(makeMysteryFunc());
+    //   or
+const mystery=makeMysteryFunc();
+console.log(mystery);  //prints the fuction
+
+
+//->calling makeMystryFunc
+//->returning function as values
+mystery();   
+mystery();
+
+// Ouput:
+// ƒ (){
+//     console.log("you win!");
+// }
+//  you win!
+//  you win!
+
+
+
+
+2. function generating function
+// ->Passing min and max value to function then it should make another fuction which tells is the value between min and max value.
+
+1. Checking wheather number is between 50 and 100
+function isBetween(num){
+    return num>=50 && num<=100;
+}
+// console.log(isBetween(51));  //Output:true
+// console.log(isBetween(49));     //Output:false
+
+2. Writing factory function
+factory function - fuction which makes fuction.
+
+// 1. makeBetweenFunc accepts min and max values
+// 2. it returns a function.
+// 3. returned function is saved in variable.
+ 
+function makeBetweenFunc(min,max){
+   return function(num){
+       return num>=min && num<=max;
+   }
+}
+
+const isChild =makeBetweenFunc(0,18);
+console.log(isChild(40));  //Output:false
+console.log(isChild(15));  //Output:true
+
+const isAdult =makeBetweenFunc(19,64);
+console.log(isAdult(79)); //Output:false
+console.log(isAdult(59));  //Output:true
+
+220. Defining Methods
+1. Methods -  functions added as properties on objects are called methods.
+
+eg-1:
+"hello".toUpperCase() -> "HELLO"
+[1,2,5].indexOf(2) ->1
+
+
+2. Difference between method and function
+->A method is simply a function that has been placed as a property on object.
+->every method is a fuction
+->every fuction is not method
+->function can be stored in variable.
+->funtion can be passed as argument.
+->we can use fuction as value in a property.
+eg-1:
+const math={
+    multiply:function(x,y){
+        return x*y;
+    }
+    divide : function(x,y){
+        return x/y;
+    }
+    square : function(x){
+        return x*x;
+    }
+}
+
+->Math object contains bunch of methods.
+
+// eg-2:
+const myMath={
+    pi:3.14,
+    square:function(num){
+        return num*num
+    },
+    cube:function(num){
+        return num**3
+    }
+}
+
+console.log(myMath.square(2));
+console.log(myMath.cube(2));
+console.log(myMath['cube'](4));
+
+// Ouput:
+// 4
+// 8
+// 64
+
+3. new shorthand way of adding methods
+->writing above code in shorthand way.
+const myMath={
+    pi:3.14,
+    square(num){
+        return num*num;
+    },
+    cube(num){
+        return num**3;
+    }
+}
+
+console.log(myMath.cube(3)) //Output:27
+
+
+221. The Mysterious Keyword 'this'
+->use the Keyword this to access other properties on the same object.
+->it is used inside an object in method.
+->this is used to get info of object into method present in that object.
+->The value of this depends on the invocation context of the function it is used in.
+->it depends on how we actually call function.
+
+
+1. this is used to get info of object into method present in that object.
+eg-1:
+
+const cat={
+    name:"bot",
+    color:"grey",
+    meow(){
+        console.log(this.name);      // Output:bot
+        console.log(this.color);     // Output:grey
+        console.log(`${this.name} say's Meow Meow Meow`);
+    }
+}
+
+console.log(cat.meow()); //Output:Meow Meow Meow
+
+
+2. The value of this depends on the invocation context of the function it is used in.
+->it depends on how we actually call function.
+// eg-2:
+const cat={
+    name:"bot",
+    color:"grey",
+    meow(){
+        console.log("This is:",this);
+        console.log(this.name);      
+        console.log(this.color);     
+        console.log(`${this.name} say's Meow Meow Meow`);
+    }
+}
+
+
+=>calling meow fuction in 
+console.log(cat.meow());
+Ouput:
+This is: {name: 'bot', color: 'grey', meow: ƒ}
+bot
+grey
+bot say's Meow Meow Meow
+
+// storing meow function to varaible.
+const meow2=cat.meow;
+console.log(meow2());  //Output:say's Meow Meow Meow
+                       //->name of the cat is missing
+
+
+meow2()
+This is: Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+
+->think window object is left of meow2
+
+
+3. Window object 
+-> main object where everything loads 
+in it when we work with js.
+->it is top level object.
+->Type windowin console.
+
+eg-1:
+function scream(){
+    console.log("ha ha");
+}
+
+scream()-> ha ha
+
+window.scream ->
+ƒ scream(){
+    console.log("ha ha");
+}
+
+->Scream is added to the window object.
+
+222. Using Try/Catch
+-> they deal with catching errors.
+->we have to add catch after try.
+->catch- block of code runs if something went wrong if there was exception or error generated inside try block.
+
+eg-1: generates error
+->hello is not defined
+hello.toUpperCase();
+
+
+// eg-2:
+try{
+    hello.toUpperCase();
+}catch{
+    console.log("Error!!!");
+}
+
+console.log("After");
+
+// Output:
+// Error!!!
+
+->Everythings stops if error occurs in code.

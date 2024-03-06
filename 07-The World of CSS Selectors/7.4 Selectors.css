@@ -1,0 +1,49 @@
+/* Universal selector */
+* {
+    background-color:white;
+}
+
+/* Element Selector */
+p {
+    color: black;
+
+}
+
+button {
+    background-color: rgb(238, 255, 0);
+}
+
+
+
+/* =>Selecting multiple elements */
+/* h1, p{
+    color:rgb(0, 0, 255);
+} */
+
+/* Id Selector */
+#register {
+    background-color: blue;
+}
+
+/* Class Selctor */
+.tag {
+    background-color: lightpink;
+    color: rgb(40, 2, 255);
+    font-size: 20px;
+}
+
+p label{
+ color:red;
+}
+
+p span a{
+    color:rgb(255, 0, 0);
+}
+
+footer a{
+    color:orange;
+}
+
+.tag a{
+    background-color: aqua;
+}

@@ -1,0 +1,348 @@
+59. What is CSS?
+Purple - CSS  - Adjectives
+Dino   - HTML - Nouns
+Danced - JS   - verbs
+
+1. What is it?
+->CSS is language for describing how documents are preseneted visually.
+->how they are arranged and styled.
+
+2. What does it stand for?
+->CSS - stands for Cascading Style Sheets.
+
+3. CSS Rules
+->(almost) everthing you do in CSS follows this basic pattern.
+
+selector{
+    property : value;
+}
+
+eg:
+1. Make all <h1> elements purple
+    h1{
+    color : purple;
+    }
+
+2. Make all images elements 100 pixels wide and 200 pixels tall.
+
+img{
+    width:100px;
+    height:200px;
+}
+
+3. Select every other text input and give it a red border.
+
+input[type="text]:nth-of-type(2n){
+    border:2px solid red;
+}
+
+60. CSS is huge, Don't panic
+->refer MDN documentation for CSS.
+->search in google.
+->CSS tricks
+
+
+
+
+61. Including Styles Correctly
+=>Options to write styles
+1. Inline Styles
+->writing styles directly inline on each element.
+->it is not a good idea most of the times.
+->we cannot style all elements at time. style can be done individually.
+
+eg:
+ <h1 style="color:rgb(4, 247, 28)">Hello World</h1>
+    <button style="background-color:palegreen">I am Button</button>
+    <button style="background-color:rgb(60, 255, 0)">I am Button</button>
+
+2. The <STYLE> Element
+->writing styles inside of a <style> element. 
+->this is easy.
+->but it makes it impossible to share styles between documents.
+->Not recommended either.
+->if there are multiple documents in project then style element has to copy in each document.
+->it is quiet complex.
+
+eg:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Element</title>
+    <style>
+        h2{
+        color:rgb(0, 179, 255);
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <h2>Welcome</h2>
+    
+</body>
+</html>
+
+3. External Style Sheets
+->Writing your styles in a .css files and then include using <link> in the head of your html document.
+->it is recommended.
+
+->rel attribute
+The required rel attribute specifies the relationship between the current document and the linked document/resource.
+
+->href attribute
+The href attribute specifies the URL of the page the link goes to.
+->specify .css file name.
+
+=>Linking .html file and .css file 
+<head>
+
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="6.6 ExternalStyles.css">
+</head>
+
+->Link tag always goes in head they  are meta information.
+
+62. Color & Background-Color Properties
+selector{
+    property : value;
+}
+
+1. color property
+The color CSS property sets the foreground color value of an element's text and text decorations, and sets the currentcolor value.
+
+->color property change the text color.
+
+eg: 
+1. Make all <h1> elements greenyellow
+h1{
+    color:greenyellow;
+}
+
+2. Change background color
+button{
+    background-color: aqua;
+}
+
+63. Colors Systems: RGB & Named Colors
+->refer HTML Color Codes Website -https://htmlcolorcodes.com/color-picker/
+->we have 140 named colors.
+->A typical computer can display 16,000,000 different colors.
+
+=>Color Systems
+1. RGB color Systems
+->Red, Green, Blue Channels
+->each channel ranges from 0-255
+
+->these colors added together to form other color.
+->refer pixel geomentry.
+->it is an example of additive color system.
+
+red -rgb(255,0,0) -> reg, green, blue
+blue-rgb(0,0,255)
+
+eg:
+button{
+    color:rgb(255,0,0);
+    background-color: aqua;
+}
+
+->Use color picker for selecting color.
+->htmlcolorcodes.com
+
+
+
+2. Hexadecimal Color System
+->still red, green and blue channels.
+->Each ranges from 0-255 but represented with hexadecimal.
+->it is base 16.
+->every slot in a number we have 16 choice
+-> _ _ _ _
+->Hexadecimal - 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F
+A- 10
+B- 12
+C- 13
+D- 14
+E- 15
+F- 16
+
+->numbers are given bunch of colors.
+->we use letters to make numbers shorter.
+->Hexadecimal is used to store more information to store single digit.
+->#ffff00 - Yellow color 
+
+->#      ff              ff               00
+->   Red channel      Green Channel    Blue channel
+->     255               255              00 
+-> it gives yellow.
+
+->#  -> Indicates hexadecimal color
+->ff -> In Hexadecimal is 255
+->ff -> 15*(16^1)+15*(16^0)=255
+
+->generally use hexadecimal codes.
+
+->#000000 = #000
+->#cc55ee = #c5e
+
+eg:
+h1{
+    color:#cc55ee;
+    or
+    color:#cc55ee;
+}
+
+->HSL (for hue, saturation, lightness) and HSV are alternative representations of the RGB color model, designed in the 1970s by computer graphics researchers.
+
+
+
+65. A Reminder On Semicolons & CSS
+->it is essential.
+->madatory to wrte Semicolons in css.
+->it doesn't give any error if it is not used while code.
+->if semicolons are missing in code the property will not work.
+
+66. Common Text Properties
+1. text-align
+2. font-weight
+3. text-decoration
+4. line-height
+5. letter spacing
+
+1. text-align
+The text-align CSS property sets the horizontal alignment of the inline-level content inside a block element or table-cell box.
+
+text-align: start;
+text-align: end;
+text-align: left;
+text-align: right;
+text-align: center;
+text-align: justify;
+text-align: justify-all;
+text-align: match-parent;
+
+eg:
+p {
+    text-align:center;
+    text-align:justify;
+}
+
+2. font-weight
+The font-weight CSS property sets the weight (or boldness) of the font.
+
+font-weight:normal;
+font-weight:bold;
+font-weight:lighter;
+font-weight:bolder;
+font-weight: 100;
+font-weight: 900;
+
+400 -> normal
+700 -> bold
+
+3. Text decoration
+The text-decoration shorthand CSS property sets the appearance of decorative lines on text.
+
+
+text-decoration: underline;
+text-decoration: underline dotted;
+text-decoration: underline dotted red;
+text-decoration: green wavy underline;
+text-decoration: underline overline #FF3028;
+
+eg:
+h1{
+     text-decoration:blue underline wavy;
+}
+
+->if underline is not needed for hyper links use
+text-decoration:none;
+eg:
+a {
+    text-decoration: none;
+}
+
+4. line height
+The line-height CSS property sets the height of a line box. It's commonly used to set the distance between lines of text.
+
+line-height: normal;
+line-height: 2.5;
+line-height: 3em;
+line-height: 150%;
+line-height: 32px;
+
+eg:
+p {
+    line-height: 1.2;
+}
+
+
+5. Letter spacing
+The letter-spacing CSS property sets the horizontal spacing behavior between text characters. This value is added to the natural spacing between characters while rendering the text.
+
+letter-spacing: normal;
+letter-spacing: 1px;
+letter-spacing: -1px;
+
+
+eg:
+p {
+    letter-spacing: 1px;
+}
+
+67. Font Size Basics With Pixels
+The font-size CSS property sets the size of the font. Changing the font size also updates the sizes of the font size-relative <length> units, such as em, ex, and so forth.
+
+=>Relative
+EM, REM,VH,VW, % and more
+
+=>Absolute
+PM, PT, CM, IN, MM
+
+PX - by far most commonly used absolute unit.
+->1 px deos not necessarily eqaul the width of exactly one pixel.
+->not recommended for reponsive websites.
+
+68. The Font Family Property
+The font-family CSS property specifies a prioritized list of one or more font family names and/or generic family names for the selected element.
+->changing fonts depends on built in fonts in browser.
+
+
+->Check cssfontstack.com
+
+->The font-family property lists one or more font families, separated by commas. Each font family is specified as either a <family-name> or a <generic-name> value.
+
+->two font families, the first with a <family-name> and the second with a <generic-name>:
+
+eg:
+->font-family: "Gill Sans Extrabold", sans-serif;
+
+->backup option can be provided.
+->backup fonts are seperated by comma.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

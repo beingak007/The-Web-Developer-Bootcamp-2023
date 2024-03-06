@@ -1,0 +1,43 @@
+<!-- HTML5 Form Validation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/dummy">
+        <label for="username">Username:</label>
+        <input type="text" name="name" id="username"  required><br>
+        <button>Submit</button>
+    </form>
+<form action="/dummy1">
+    <p>
+        <label for="name">Enter name:</label>
+        <input type="text" id="name" minlength="2" maxlength="7" required><br>
+        <button>Submit</button>
+    </p>
+
+  
+</form>
+
+<form action="/dummy2">
+    <p>
+        <label id="number">Enter number:</label>
+        <input type="number" id="number" min="1" max="1000"><br>
+        <button>Submit</button>
+    </p>
+</form>
+
+<h3>email validation</h3>
+<form action="/dummy3">
+    <p>
+        <label for="email">Enter number:</label>
+        <input type="email" id="email" required>
+        <button>Submit</button>
+    </p>
+</form>
+
+</body>
+</html>

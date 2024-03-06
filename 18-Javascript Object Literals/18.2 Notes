@@ -1,0 +1,206 @@
+188. Introducing Object Literals
+1. Objects- Data is stored using key value pair.
+-> Object is collection of properties.
+-> Properties are a key-value pair
+-> Rather than accessing data using an index, we use custom keys.
+->a key is like a label.
+->Object is just a bunch of these pairs.
+->Keeping properties in object and accessing them by using custom key.
+->Property = key + value;
+
+Syntax:
+key: value;
+
+eg:
+name:"Ashish";
+age:24;
+city:"hyderabad";
+zip:507002;
+
+=>How would you store this?
+total steps = 308,727
+total floors= 1,826
+total miles = 211.70
+avg. daily calorie burn: 5,755
+total active minutes: 2312
+exercising this week : 7 of 5 days
+avg. restful sleep : 2hrs 13min
+
+->With array it looks junky and not helpful to see.
+
+=>Sotring above data using object
+const fitBitData = {
+    total_steps: 308727,
+    total_floors: 1826,
+    avgCalorieBurn: 5755,
+    workoutsThisWeek: '5 of 7',
+    avgGoodSleep: '2:13',
+
+};
+
+189. Creating Object Literals
+->Object literals -> key-value pairs.
+->each pair has key, colon and value.
+->separate pairs by comma(',').
+->we can give any value to keys.
+->we can have different types of values in an object.
+->Arrays are ordered.
+
+
+
+eg-1:
+const person={firstname:"Ashish", lastname:"Paul"};
+person-> {firstname: 'Ashish', lastname: 'Paul'}
+
+eg-2:
+const bio={
+   name:"Ashish";
+   age:24;
+   city:"hyderabad";
+   zip:507002;
+
+};
+
+
+190. Accessing Data Out Of Objects
+1. First method to access-
+syntax: variableName['key'];
+->In order to access data out of objects we have to use square brackets and quotation marks(single or double).
+eg-1:
+const person={firstname:"Ashish", lastname:"Paul"};
+person['firstname']; -> 'Ashish'
+
+
+->if key is not found then it results as undefined.
+eg-2:
+const person={firstname:"Ashish", lastname:"Paul"};
+person['name'] -> undefined
+
+eg-3:
+const bio={
+   name:"Ashish",
+   age:24,
+   city:"hyderabad",
+   zip:507002,
+
+};
+bio['age'] -> 24
+
+1. Second method to access-
+->In order to access data out of objects we have to use dot
+->Syntax: variableName.key;
+
+eg-1:
+const bio={
+   name:"Ashish",
+   age:24,
+   city:"hyderabad",
+   zip:507002,
+
+};
+
+
+bio.age  //Output:    24
+bio.name //Output: 'Ashish'
+
+=>What happens when object is created?
+->Valid keys- All keys are converted to strings.
+->every key in an object is converted to string.
+->symbols can also used as key.
+
+eg-1:
+const year={1999:"Good", 2000:"Better"};
+
+
+=>Both works in order to fetch data
+->incase of numbers they are convereted to strings.
+years["1999"] -> 'Good'
+
+->it works. 1999 is converted to string.
+years[1999] ->'Good'
+
+eg-2:
+const color={ bike:"red",car:"black"};
+color -> {bike: 'red', car: 'black'}
+color['bike'] -> 'red'
+
+->In this case bike is expected or assumed as variable name. 
+color[bike] -> bike is not defined
+
+
+->it is allowed
+color['bi'+'ke']; ->'red'
+
+
+191. Modifying Objects
+->Adding new information and updating information.
+
+eg-1: 
+1. Updatind paul marks to 79
+const midterms={ashish:96, paul:78};
+midterms.paul=79;   //Output:79
+midterms            //Output:{ashish: 96, paul: 79}
+
+2. Replacing marks with grades
+const midterms={ashish:96, paul:78};
+midterms.ashish="A+";
+'A+'
+midterms.paul="A";
+'A'
+
+midterms //Output: {ashish: 'A+', paul: 'A'}
+
+3. Adding another pair
+const midterms={ashish:96, paul:78};
+midterms["john"]=94;
+94
+midterms -> {ashish: 96, paul: 78, john: 94}
+
+
+192. Nesting Arrays & Objects
+->Inside array we can store arrays, numbers, strings, booleans.
+-> Inside an object we can store whatever we want as the values. we can store numbers, strings, booleans, null, undefined, other objects and arrays.
+
+
+eg-1:Object is nested inside array
+let cars = [
+  {
+    "color": "purple",
+    "type": "minivan",
+    "registration": new Date('2017-01-03'),
+    "capacity": 7
+  },
+  {
+    "color": "red",
+    "type": "station wagon",
+    "registration": new Date('2018-03-03'),
+    "capacity": 5
+  }
+];
+
+eg-2: Array and object is nested inside object.
+const students={
+   firstname='david',
+   lastname='jones',
+   strengths: ['Music' ,'Art'],
+   exams:{
+      midterm:92;
+      final:88
+   }
+}
+
+eg-3:
+const comments=[{username:"ashish",text:"excellent",votes:9},{username:"paul",text:"good",votes:8},{username:"john",text:"better",votes:7}]
+
+=>Accesing 2nd object in an array
+comments[1] -> {username: 'paul', text: 'good', votes: 8}
+
+
+=>Accesing votes of 2nd object
+comments[1].votes; //Output:8
+
+=>Accessing text of 2nd object
+comments[1].text //Output:'good'
+
+=>Accessing username of 2nd object
+comments[1].username //Output:'paul'

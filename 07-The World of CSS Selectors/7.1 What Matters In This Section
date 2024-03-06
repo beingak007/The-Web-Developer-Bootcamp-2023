@@ -1,0 +1,23 @@
+Section-7 : The World of CSS Selectors
+
+What Matters In This Section?
+Crucial
+1. Element Selector
+2. Class Selectors
+3. ID Selectors
+4. Descendent Selector
+5. CSS Specificity - How CSS configures what styles to apply when conflict occurs between styles.
+->helps to debug.
+->help to structure code.
+
+Important
+1. Adjacent Selector
+2. Direct Descendent Selector
+3. Attribute Selector
+4. Pseudo Elements
+5. Pseudo Classes
+
+
+
+Nice to Have
+

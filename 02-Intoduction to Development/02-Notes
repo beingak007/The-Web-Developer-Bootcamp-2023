@@ -1,0 +1,89 @@
+1. The Internet in 5 Minutes
+-> A global network of networks
+-> a bunch of connected devices 
+
+network example
+->Routing 
+->devices are connected to each other.
+
+->The Internet is Infrastructure that carries things like
+1. Email
+2. web
+3. File Sharing 
+4. Online Gamming
+5. Streaming Services
+
+->Internet is bunch of connected computer which    enable us to share websites and make web work.
+
+2. Intro to web
+The world wide web is an information system where
+documents and others resources are available over 
+the internet.
+
+->Documents are transferred via HTTP
+->those documents are identified by URL's
+->URL's->Uniform Resource Locators  
+->web works by HTTP
+
+2.1  HTTP Request
+Hypertext transfer protocol secure (HTTPS) is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website. 
+
+->it is standardised set of rules how form of communication should work.
+
+->Foundation of communication on the world wide web 
+-> Request - I would like this information please.
+-> Response- ok, here you go
+
+->when we request for information in browser it goes to web server and server send the information to user.
+
+2.2 web server
+->web server- A computer that can satisfy requests on the web.
+->server is also used to refer to the software  running on the computer.
+-Server are machines connected to internet.
+
+2.3 Client-the computer that accesses a server
+->here user, machine and browser is client.
+
+3. The Request and Response cycle
+
+->when we search for something on internet the request goes to server.
+->server response with instructions with code that browser can understand and renders or display the information.
+
+       server<----->your Browser 
+
+->we can see response from server by checking view source.
+->Browser understand the instructions given by server.
+
+->we search something in google. a HTTP request  is sent. our browser sents HTTP request.
+->that request is recived by google server.
+->server builds a web page based on what we ask.
+->server responds back with a web page build with HTML, CSS and JS.
+
+4. Front-End and Back-End
+
+4.1 Front-End
+->front end focus stuff runs in the browser.
+->we search something in google. a HTTP request  is sent. our browser sents HTTP request.
+
+
+4.2 Back-End
+->At the back end server receives the request from client.
+->response constructed here and given to client in from HTML,CSS and JS.
+->Back end focus on stuff runs on the server.
+
+4. What do HTML/CSS/JS do?
+-> these three technologies for resposible for making technology.
+->The purple dino danced.
+->Pruple ->CSS  ->  Ajectives
+->Dino   ->HTML ->  Nouns
+->Danced ->JS   ->  Verbs 
+
+->HTML->Describes What things on page
+->CSS ->Describes the how html elements should look and structured.
+->JS  ->javascript focus on moments or logic.
+
+5. The tools we need
+
+1. Chorme Browser
+2. VS Code
+3. Spectacle- on mac

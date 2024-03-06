@@ -1,0 +1,316 @@
+178. Introducing Arrays              05/12/2023
+1. Arrays- Order collection of values.
+->group data together.
+
+eg:
+->List of comments on IG post.
+->Collection of levels in a game.
+->Song in a playlist.
+->Levels in games
+
+
+2. Creating an Array
+->To make an empty Array
+->Assigning variable for an empty array.
+->In other proframming language homogenous data is allowed in array.
+->type should be explicitly declared in other programming languages.
+
+let arr=[];
+
+->An arrays of strings 
+let colors=['red','orange','yellow'];
+
+->An arrays of numbers 
+let arnums=[2,5,6,4];
+
+->A mixed array
+let stuff =[true, 68, 'cat', null];
+
+eg:
+let days=["Monday","Tuesday", "Wednesday"];
+
+days
+(3) ['Monday', 'Tuesday', 'Wednesday']
+
+days.length
+3
+
+
+179. Array Random Access
+->Arrays are indexed.
+->In array each individual elements have it's own index.
+->Each element in an array has a corresponding index(counting starts at 0).
+->Index are used to refer elements in array
+
+
+eg: 
+arr   -> red blue green yellow
+index ->  0   1    2      3
+
+2. Length of an Array
+->to fine length of an array we use length method.
+
+eg:
+let arr3=[true, 68,'cat',null];
+console.log(arr3.length); // Output: 4
+
+
+3. Accessing elements in array
+
+->accessing elements in an array
+console.log(arr3[1]);  //output: 68
+
+
+->accessing letter of element in arrya
+console.log(arr3[2][1]); //output:a
+
+
+
+4. Correcting or changing elemetns in an array
+->we can change value and type in case of array.
+eg-1:
+let arr4=['rad','orange','yelow'];
+arr4[0]='red';
+console.log(arr4)
+
+eg-2:
+let arr4=['rad','orange','yelow'];
+arr4[0]='red';
+console.log(arr4)
+
+5. Inserting elements in an array
+eg-3:
+let colors=["red","green","blue"];
+colors[0]
+'red'
+
+colors[10]="indigo"
+'indigo'
+
+colors
+['red', 'green', 'blue', empty × 7, 'indigo']
+
+=>length
+colors.length
+11
+
+
+180. Push & Pop
+=>Build in Array Methods
+1. Push  - add to end
+2. Pop   - remove from end
+3. Shift - remove from start
+4. Unshift - add to start
+
+
+->Check in MDN
+array standard buil in objects
+
+1. Push  - add to end
+eg-1: Push Method
+let car=['BMW', 'Swift', 'Audi'];
+car.push("Alto k10") -> 4
+car -> (4) ['BMW', 'Swift', 'Audi', 'Alto k10']
+
+eg-2:
+let barbell=[];
+barbell.push(45); ->1
+barbell.push(25); ->2
+barbell.push(10); ->3
+barbell.push(56); ->4
+
+
+barbell-> [45, 25, 10, 56]
+
+
+eg-2:if mehods are used on string they will not update on orignal strings but in array they get updated.
+let cat="blue";
+cat.toUpperCase() ->'BLUE'
+cat ->'blue'
+
+2. Pop  - remove from end
+->it does not require any arguments.
+eg-1: Pop Method
+let color=['red', 'green','blue'];
+color.pop(); ->'blue'
+color -> ['red', 'green']
+
+
+181. Shift & Unshift
+1. Shift - remove from the start
+eg-1:
+let barbell=[45, 25, 10, 56];
+barbell.shift(); ->45
+
+2. Unshift - add to start
+eg-1:
+let colors=["red","green","blue"];
+colors.unshift("purple");
+colors -> ['purple', 'red', 'green', 'blue']
+
+
+182. Concat, indexOf, includes & reverse
+=>More Methods
+1. concat() method
+The concat() method of Array instances is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array. 
+
+Syntax:
+concat()
+concat(value1)
+concat(value1, value2)
+concat(value1, value2, /* …, */ valueN)
+
+eg-1:
+const array1=['a','b','c'];
+const array2=['d','e','f'];
+const array3=array1.concat(array2);
+array3 -> Array(6) [ "a", "b", "c", "d", "e", "f" ]
+
+2. Includes() Method
+The includes() method of Array instances determines whether an array includes a certain value among its entries, returning true or false as appropriate. 
+
+eg:
+let arr=[12,20,45,63];
+let arr1=arr.includes(45);
+arr1 -> true 
+
+let arr=[12,20,45,63];
+let arr1=arr.includes(10);
+arr1 -> false 
+
+-> In strings if character is not found it returns '-1'.
+
+eg-1:
+"blue".indexOf('l') ->  1
+"blue".indexOf('0') -> -1
+
+3. reverse() method
+The reverse() method of Array instances reverses an array in place and returns the reference to the same array.
+
+eg-1:
+let arr=[1,2,3,4,5];
+let reversed=arr.reverse();
+reversed -> Array(5) [ 5, 4, 3, 2, 1 ]
+
+
+
+183. Slice & Splice
+4. Slice() method - Copies a portion on an array
+
+eg-1:
+let color=['red','orange', 'yellow','green', 'blue','indigo', 'violet'];
+color.slice(0,3) -> Array(3) [ "red", "orange", "yellow" ]
+
+color ->Array(7) [ "red", "orange", "yellow", "green", "blue", "indigo", "violet" ];
+
+=>getting last 3 elements
+color.slice(-3)
+Array(3) [ "blue", "indigo", "violet" ]
+
+5. splice() Method - The splice() method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. 
+
+syntax: splice(start, deleteCount, item1, item2, /* …, */ itemN)
+
+eg-1:
+const color=['red','orange','yelow']; 
+color.splice(2,1,"purple")
+
+color-> Array(4) [ "red", "orange", "purple", "purple" ]
+
+eg-2:
+adding sunday ar 
+const day=["Monday", "Tuesday", "Wednesday"];
+day.splice(1,3,"Sunday")
+
+day -> Array [ "Monday", "Sunday" ]
+
+eg-2:
+->from index 2 delete two elements add element at 2.
+
+const color1=['sunday','monday', 'wednesday','Thursday','Friday','Saturday'];
+color1.splice(2,2,"no day")-> Array [ "wednesday", "Thursday" ]
+color1-> Array(5) [ "sunday", "monday", "no day", "Friday", "Saturday" ]
+
+eg-3:
+months.splice(4, 1, 'May');
+// Replaces 1 element at index 4
+console.log(months);
+// Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+eg-4: Inserting between elements.
+const day1=["Sunday", "Tuesday", "Wednesday"];
+day1.splice(1,0,"Monday"); -> Array(4) [ "Sunday", "Monday", "Tuesday", "Wednesday" ]
+
+
+6. sort() Method -> sorts an array
+->The sort() method of Array instances sorts the elements of an array in place and returns the reference to the same array.
+
+184. Reference Types & Equality Testing
+->Javascript is not comparing content but it is comparing references.
+
+->In case of strings it is comparing values.
+eg:
+"h1"==="h1" -> true
+
+->In case of arrays it is comparing reference numbers.
+->reference numbers are different for different variables.
+eg:
+["h1","bye"]===["h1","bye"] -> false
+[1]==[1] ->false
+[]==[]   -> false
+
+eg:
+->num and num1 points to same array.
+let num=[1,2,3];
+let num1=num;
+num.push(4); ->4
+num  -> Array(4) [ 1, 2, 3, 4 ]
+num1 -> Array(4) [ 1, 2, 3, 4 ]
+
+num.pop() ->4
+num1      ->Array(3) [ 1, 2, 3 ]
+
+->both num and num1 are pointing to same array. so references of num and num1 are same.
+num==num1
+true
+
+
+
+185. Arrays + Const
+->why const is used with arrays?
+-> by using const with array we are making referce to be constant but content can be changed.
+->The values can change as long as the reference remains the same
+->if value is changed, reversed, added or removed refernce will not be effected.
+->if new refernce is given then it is resulted in error.
+->Const is used for having same shell.
+->With const we can't change the refernce and reassign
+but can alter inside as much as we can.
+
+eg-1:
+const myEggs=["Brown","White"];
+myEggs.push("blue"); -> 3
+myEggs -> Array(3) [ "Brown", "White", "blue" ]
+
+
+myEggs=["green","grey"]
+Uncaught TypeError: invalid assignment to const 'myEggs'
+    <anonymous> debugger eval code:1
+
+eg-2: don't go from arrays to nums.
+
+186. Multi-Dimensional Arrays
+1. Nested arrays- we can store arrays inside other arrays.
+eg-1:
+let arr=[[2,5], [5,6,7], [5,8,8]];
+arr[0];-> Array [ 2, 5 ]
+arr[1] -> Array(3) [ 5, 6, 7 ]
+arr[2] -> Array(3) [ 5, 8, 8 ]
+
+eg-2:
+const gameBoard=[['X','0','X'],['o','null','X'],['o','o','x']];
+Array(3) [ (3) […], (3) […], (3) […] ]
+​
+0: Array(3) [ "X", "0", "X" ]
+1: Array(3) [ "o", "null", "X" ]
+2: Array(3) [ "o", "o", "x" ]
+

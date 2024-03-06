@@ -1,0 +1,384 @@
+194. Intro to For Loops        06/12/2023
+1. Loops - 
+->Loops allows us to repeat code
+eg-1: print "hello" 10 times.
+      sum all number in an Array
+
+->There are multiple types
+1. for loop
+2. while loop
+3. for..Of loop
+4. for..in 
+
+1. for loop
+
+syntax:
+
+for (initialization; condition; afterthought)
+  statement
+
+    or
+
+for(
+
+    [intialExpression];
+    [condition];
+    [incrementExpression]
+)
+
+eg-1: printing numbers from 1 to end
+for(let i=0;i<=10;i++){
+    console.log(i);
+}
+
+
+Ouput:
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0
+
+
+195. More For Loops Examples
+1. Printing 0 to 20
+for(let i=0;i<=20;i++){
+    if(i%2==0){
+        console.log(i);
+    }
+}
+
+Ouput:
+0
+2
+4
+6
+8
+10
+12
+14
+16
+18
+20
+
+2. Printing 100 to 1
+for(let i=100 ;i>0;i--){
+    console.log(i);
+}
+
+196. The Perils Of Infinite Loops :(
+
+1. Infinite Loop
+
+->loops does not stop running.
+->Sometimes it will push machine to a place it does not want to go.
+->Sometimes it cause browser window to lock up entirely.
+->we can halt them with present tools.
+
+eg:Infinite loop
+for(let i=20;i>=0;i++){
+    console.log(i);
+}
+
+
+197. Looping Over Arrays
+->to loop over an array, start at index 0 and continue looping to unitl last index(length-1).
+
+eg-1:
+for(let i=0;i<color.length;i++){
+   console.log(i,color[i]);
+}
+
+Ouput:
+
+ 0 'red'
+ 1 'green'
+ 2 'blue'
+
+ 
+198. Nested Loops
+->Putting for loop inside a for loop.
+->To traverse or iterate across nested arrays.
+
+eg-1:
+for(let i=1;i<=3;i++){
+    console.log(`Outer loop is:${i}`);
+    for(let j=1;j<=2;j++){
+        console.log(`     inner loop is:${j}`);
+
+    }
+}
+
+// Ouput:
+// Outer loop is:1
+//     inner loop is:1
+//     inner loop is:2
+// Outer loop is:2
+//     inner loop is:1
+//     inner loop is:2
+// Outer loop is:3
+//     inner loop is:1
+//     inner loop is:2
+
+eg-2:traversing or iterate across nested arrays.
+const colors=[["red","green","blue"],["skyblue","pink","violet"],["black","grey","white"]];
+for(let i=0;i<colors.length;i++){
+    for(let j=0;j<colors.length;j++){
+        console.log(colors[i][j]);
+    }
+}
+
+// Output:
+// red
+// green
+// blue
+// skyblue
+// pink
+// violet
+// black
+// grey
+
+199. The While Loop
+->while loops continue running as long as the test constion is true.
+->it is useful when we may not know how many times it iterates.
+eg-1:
+let i=0;
+while(i<5){
+    console.log(i);
+    i++;
+}
+
+Output:
+0
+1
+2
+3
+4
+
+eg-2:
+while(!gameover){
+    //player 1 move
+    //player 2 move
+}
+
+// eg-3:secret code 
+const secret="open";
+let guess=prompt("enter the secret code!");
+while(guess!==secret){  //if guess is wrong get new guess
+    guess=prompt("enter the secret code!");
+    
+}
+console.log(guess);
+
+200. The Break Keyword
+->The break statement "jumps out" of a loop.
+->break is keyword is commonly used with while loop.
+->at break statement code comes out of loop.
+
+eg-1:
+let input=prompt("hello")
+while(true){
+    input=prompt(input);
+    if(input.toLowerCase()===stop){
+        break;
+    }
+}
+console.log("okay you win");
+
+// Output:
+// okay you win
+
+
+eg-2:
+
+for(let i=0;i<1000;i++){
+    console.log(i);
+    if(i===5){
+        break;
+    }
+}
+
+// Output:
+// 0
+// 1
+// 2
+// 3
+// 4
+// 5
+
+201. Writing a Guessing Game
+->when we give something to prompt it converts to String.
+->ParseInt converts string to integer.
+
+
+code:
+
+let maximum=parseInt(prompt("enter mximum num "));
+// making sure that the user enter valid number
+while(!maximum){  
+    maximum=parseInt(prompt("enter valid number!"));
+}
+const targetNum=Math.floor(Math.random()*maximum)+1;
+
+
+let guess=(prompt("enter your first guess! (Type 'q' to quit)"));
+let attempts=1;
+
+while(parseInt(guess)!==targetNum){
+    if(guess==='q') break;
+    attempts++;
+    guess=parseInt(guess);
+    if(guess>targetNum){
+        guess=prompt("too high!enter a new guess:");
+    }else if(guess<targetNum){
+        guess=prompt("too low! enter a new guess:");
+    }else{
+        guess=prompt("invalid guess. please enter a number or 'q' to quit ");
+    }
+}
+
+if(guess=='q'){
+    console.log("ok you quit")
+}
+else{
+    console.log("ok, you quit!")
+    console.log(`you got it! it took you ${attempts} guesses`);
+}
+
+
+console.log(targetNum);
+
+203. The Lovely For...Of Loop
+->it newer in js.
+->it is not supported in internet explorer.
+
+1. for...of - 
+->A nice and easy way of iterating over arrays or other iterable objects.
+->for...of also used to iterate strings.
+
+syntax:
+for(variable of iterable){
+    statement
+}
+
+->variable of iterable -it represents individual elements in an array.
+
+eg-1:
+const colors=["red","white","green","blue"];
+for(let color of colors){
+    console.log(color);
+}
+
+// Ouput:
+// red
+// color
+// green
+// blue
+
+// eg-2:
+const colors=[["red","green","blue"],["skyblue","pink","violet"],["black","grey","white"]];
+
+// =>using for loop
+// for(let i=0;i<colors.length;i++){
+//     for(let j=0;j<colors.length;j++){
+//         console.log(colors[i][j]);
+//     }
+// }
+
+// =>using for..of loop
+
+for(let row of colors){
+    for(let elements of row){
+        console.log(elements);
+    }
+}
+
+// Output:
+// red
+// green
+// blue
+// skyblue
+// pink
+// violet
+// llack
+// grey
+
+
+eg-3:
+for(let char of "hello"){
+    console.log(char);
+}
+
+output:
+h
+e
+l
+o
+
+204. Iterating Over Objects
+->objects with curly braces are not considered as iterables.
+->they are objects but they are not iterable objects.
+->Arrays and strings are objects.
+->for..in -> loop is used to iterate object. it gives key of each pair in the object.
+
+
+
+eg-1:
+const scores={
+    dhoni:98,
+    sachin:100,
+    raina:90,
+    kholi:80
+}
+// console.log(scores.dhoni)
+// console.log(scores['dhoni'])
+
+// =>not able to print using for...of loop
+// for(let scoresPrint of scores){
+//     console.log(scoresPrint)
+// }
+
+// =>using for...in  loops
+for(player in scores){
+    console.log(`${player} scores ${scores[player]}`)
+}
+
+// Ouptu:
+// dhoni scores 98
+// loops.js:265 sachin scores 100
+// loops.js:265 raina scores 90
+// loops.js:265 kholi scores 80
+
+
+->In built methods to access keys and values in an object.
+Object.keys(variableName);
+Object.value(variableName);
+
+eg-2:
+const scores={
+    dhoni:98,
+    sachin:100,
+    raina:90,
+    kholi:80
+}
+console.log(Object.keys(scores)); //->['dhoni', 'sachin', 'raina', 'kholi']
+console.log(Object.values(scores));// ->[98, 100, 90, 80]
+
+eg-3: finding averages
+
+
+205. Todo List Project Intro
+->"new"    -> Add a Todo
+->"list"   -> List all Todos
+->"delete" -> Remove Specific Todo
+->"quit"   -> Quit App
+
+
+
+

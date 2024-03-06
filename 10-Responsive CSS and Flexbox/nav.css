@@ -1,0 +1,19 @@
+body{
+    font-family: sans-serif;
+}
+
+nav{
+    display:flex
+}
+
+nav ul{
+    border: 1px solid red;
+    max-width: 50%;
+}
+
+ul li{
+    display: inline;
+    margin:0;
+    padding:0;
+}
+

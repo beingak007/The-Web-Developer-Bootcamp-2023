@@ -1,0 +1,418 @@
+Section-7: The World of CSS Selectors
+=>CSS Rule- Everthing you do in CSS follows this basic pattern.
+
+Selector{
+    property : value;
+}
+
+70. Universal & Element Selectors
+1. Univarsal Selector - It selects everything in document.
+
+eg:
+*{
+    color:black;
+}
+
+2. Element Selector - It selects everything of given type.
+
+eg:
+Selects all images
+img{
+    width=100px;
+    height=200px;
+}
+
+p {
+    color:black;
+
+}
+
+button{
+    background-color:rgb(238, 255, 0);
+}
+
+
+=>Styling multiple elements similarly at a time.
+->Select all h1's and h2' at a time
+eg-1:
+h1,h2{
+    color:magenta;
+}
+
+eg-2:
+h1, p{
+    color:rgb(0, 0, 255);
+}
+
+71. The ID Selector - The id selector uses the id attribute of an HTML element to select a specific element.
+               or
+The CSS ID selector matches an element based on the value of the element's id attribute. 
+
+->In order style one thing differently using ID selector.
+-># is part of syntax
+
+syntax:
+#selector{
+    property:value
+}
+
+->only one thing on the page should have any given id.
+->every id should only use once.
+->Avoid using them in code.
+
+->Add id to particular elements by using id="".
+->style it using id selctor.
+
+
+
+
+eg-1: 
+Select the element with id of 'logout'
+
+#logout{
+    color: orange;
+    height:200px;
+}
+
+->check coolors.co
+
+eg-2:
+
+=>.html code
+<button id="register">Register</button>
+
+
+=>.css code
+#register{
+    background-color: blue;
+}
+
+
+72. The Class Selector 
+->The CSS class selector matches elements based on the contents of their class attribute.
+->class selector is most commonly used element selector.
+->class is applied to multiple elements.
+->it is creating class of elements.
+->group of elements are styled similarly.
+->styling group of different or same elements similarly.
+
+Syntax:
+.Selector{
+    property:value;
+}
+
+-> "." is part of syntax.
+
+eg-1:
+-> .html file
+<span class="tag">type of gait</span>
+<span class="tag">contrast to walking</span>
+<span class="tag">over the stance leg or legs in an inverted pendulum fashion.</span>
+
+-> .css file
+.tag {
+    background-color: lightpink;
+    color: rgb(40, 2, 255);
+    font-size: 20px;
+}
+
+73. The Descendant Selector
+The descendant selector matches all elements that are descendants of a specified element.
+
+Syntax:
+selector1 selector2 {
+  /* property declarations */
+}
+
+
+eg-1: 
+div p {
+  background-color: yellow;
+}
+
+eg-2:
+->this selects all the achor tags which are descendants or nested of li.
+->select all <a>'s that are nested inside an <li>
+li a{
+    color:teal;
+}
+
+eg-3:
+Selects all <a>'s tags which are nested inside span and span which is nested inside paragraph.
+p span a{
+    color:rgb(255, 0, 0);
+}
+
+eg-4:
+section span a{
+    color:white;
+    background-color: rgb(106, 0, 255);
+}
+
+
+
+
+CSS Code
+footer > a{
+     color:rgb(0, 255, 13);
+}
+
+74 Adjacent selector and Direct Child
+74.1
+Select only the paragraphs that are immediately by an <h1>
+
+eg-1:
+h1+p{
+    color:red;
+}
+
+=>html code
+<input type="text" id="search" placeholder="search">
+<button id="login">login</button>
+<button id="signup">sign up</button>
+
+=>css code
+input+button{
+   background-color: blueviolet;
+}
+
+73.2 Direct Child
+Select only the <li>'s that are direct children of a 
+<div> element.
+
+->anchor tag nested inside footer
+footer a{
+
+}
+
+->anchor tag direct descendant
+footer>a{
+
+}
+
+eg:
+=>html code
+<footer>
+    <a href="search">hello</a>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, deleniti.</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <a href="search">hello</a> Deserunt, sapiente. Saepe quas natus quibusdam libero sint porro nisi officiis exercitationem.</p>
+</footer>
+
+75. Attribute Selector
+
+->select all input elements where the type attribute is set to "text".
+eg-1:
+input[type="text"]{
+    width:300px;
+    color:yellow;
+}
+
+eg-2:
+=>html code
+<input type="password" placeholder="password" for="password">
+
+=>Css code
+input[type="password"]{
+    color:blue;
+}
+
+
+76. Pseudo Classes
+Keywords added to a selector that specifies a special state of the selected elements(s).
+
+:active
+:checked
+:first
+:first-child
+:hover
+:not()
+:nth-child()
+:nth-of-type();
+
+eg-1: :hover
+a:hover{
+    color:red;
+}
+
+->when we hover over links the color of the links changes to red.
+->sometime some hover may not work on them due to css 
+specifity.
+
+eg-2: :active
+button:active{
+    background-color: palegreen;
+    color:rebeccapurple;
+}
+
+->when button is clicked it turns to pale green.
+
+eg-3: ::nth-of-type()
+The :nth-of-type() CSS pseudo-class matches elements based on their position among siblings of the same type (tag name).
+
+->selecting every even paragraph and styling them.
+p:nth-of-type(2n){
+    background-color: coral;
+}
+
+77. Pseudo Elements
+Keyword added to a selector that lets you style a particular part of selected elements(s).
+::after
+::before
+::first-letter
+::first-line
+::selection
+
+->we use two semi-colon(::) to indicate pseudo element.
+
+->we can slect first line, first letter etc.
+
+1. ::first-letter
+->stling font size of first letter in the paragraph.
+p::first-letter{
+    font-size: 20px;
+    
+}
+
+2.::selection
+->When paragraph is selected it gives aqua.
+p::selection{
+    background-color: aqua;
+}
+
+78. The Cascade
+The order your styles are declared in and linked to matters.
+
+eg-1:
+h1{
+    color:red;
+}
+
+h2{
+    color:purple;
+}
+
+->Purple wins
+
+->Css follows order.
+
+79. CSS Specificity
+what happens when conflicting styles target the same elements?
+-> Specificity how the browser decides which rules to apply when multiple rules could apply to same element.
+->it is measure of how specific a given selector is.The more specific selctor wins.
+
+->id>class>element
+->id is extremely specific.
+
+eg: 2nd one is more specific
+->Element Selector
+p{
+    color:yellow;
+}
+
+->Element Selector + Element Selector 
+selection p{
+    color:teal;
+}
+
+-> Formula for Specificity
+
+eg-1: 
+section p{
+    color:teal;
+}
+
+ 
+    0                0                        2
+ID Selectors       class,                   Element and
+                   Attribute&               Pseudo-element selectors
+                  pseudo-class  
+                   selectors              
+                  
+eg-2: specificity-100
+#submit{
+    color:olive;
+}
+
+
+    1                0                        0
+ID Selectors       class,                   Element and
+                   Attribute&               Pseudo-element selectors
+                  pseudo-class  
+                   selectors    
+
+
+
+
+eg-3: specificity ->  12
+nav p.active{
+    color:olive;
+}
+
+
+    0                1                        2
+ID Selectors       class,                   Element and
+                   Attribute&               Pseudo-element selectors
+                  pseudo-class  
+                   selectors   
+
+->Specificity calculator
+https://specificity.keegan.st/ 
+
+80-Tip: Chrome dev tools and css
+inspect ->you can see details under styles.
+->we change styles and preview them from inspect.
+->after refreshing everythings goes normal.
+->we can also see specificity details.
+
+
+81. Inline Styles and important exception
+->Inline styles are more specific than ID's, Classes and Elements.
+->that's the reason it is not recommeneded to use inline styles.
+
+eg:
+<style>
+        h2{
+            color:blue;
+        }
+        h1{
+            color:red;
+        }
+</style>
+
+81.1 important exception
+->telling browser that this is more specific.
+->the most specific possible thing.
+eg-1:
+h1{
+    color:red !important;
+}
+
+->generally it is not recommended to use it.
+->they can be used if we are working on somes project.
+
+82. CSS Inheritance
+->Some css properties will be inherited by child elements if they are not set on the element specifically.
+
+eg-1:
+body{
+    color:rgb(111, 0, 255);
+}
+
+->All elements in the body inherit this property.
+->see addition information for element in mdn documentation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

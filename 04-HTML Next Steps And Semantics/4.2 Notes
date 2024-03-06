@@ -1,0 +1,193 @@
+1. What exactly is HTML5?
+-> It is new version of the language HTML with new elements, attributes and behaviours.
+
+=>Living standard
+the HTML standard is a document that describes how html should work.
+
+=>Role of Browsers
+the standard describes the rules of HTML but browsers actually have to do the work and implement HTML according to those rules.
+
+=>HTML5
+HTML5 is the latest evolution of the standard that defines HTML. it includes new elements and features for browsers to implement.
+
+2. Inline vs Block Level element
+i. Inline elements - fit in alongside other elements.
+eg:
+<a> tag is inline element.
+
+ii. Block level elements - take up a whole "block" of space.
+-><P> tag is block level element.
+->it occupies whole block.
+
+
+a. <div> the content division element
+->it is a generic container to hold things or group together.
+-> it is block elements.
+->group of content to treat similarly.
+
+eg:
+    <div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+    <a href="google.com">google</a>
+    </div>
+
+
+    b. Images with text grouped using div.
+
+b.<span> 
+-> it is generic inline container for phrasing content.
+-> By using CSS we can style it.
+->spans are inline.
+eg:
+<p>Lorem ipsum dolor <span>sit amet consectetur,</span>sit amet consectetur, adipisicing elit.</p>
+
+3. An Odd Assortment of elements: HR, BR, Sup & Sub
+i. <hr> The Thematic Break(Horizontal Rule) Elements.
+it represents a Thematic break between paragraph level
+elements.
+
+eg:
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+<hr>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+
+ii.<br> elements produces a line break in text. it is useful for writing a poem or an address, where division of lines is significant.
+eg:
+<p>Ring-a-round the Rosie,<br>
+A pocket full of posies. <br>
+Ashes! Ashes!<br>
+We all fall down!</p>
+
+iii. <Sup> element -> Superscripts are usually rendered with a raised baseline using smaller text.
+eg:
+ a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup><br> -> a2+b2=c2
+
+ iv.<Sub> element->Subscripts are typically rendered with a lowered baseline using smaller text.
+ eg: H<sub>2</sub>O -> H2O
+
+ eg:
+<p><sup>1</sup>/<sub>2</sub> + <sup>1</sup>/<sub>2</sub>=1</p>
+
+4. Entity Codes
+->there are special codes or special sequences inside of HTML that would result in spacial characters.
+eg: copyright symbol, diamond, cross, trade mark,less than or greater than.
+
+->these html entities allow us to add those things.
+->they start with Ampersand and ends with semi colon. 
+->in between we put string of characters.
+
+
+=>Important Points
+1. start with an Ampersand and end with semicolon.
+2. Used to display reserved characters, that normally would be invalid.
+3. Also used in place of difficult to type characters.
+4.The browsers interprets them and renders the correct characters instread.
+
+eg:
+<h1> 1&gt;6</h1> --> 1>6
+<h1> 1&lt;6</h1> --> 1<6
+<h1>&amp;</h1>   --> &
+
+
+
+->we can use this special characters by their entity name and code.
+
+eg:
+<h1>&copy;</h1>  --> ©
+<h1>&#169;</h1>  --> ©
+
+
+5. Intro to Semantic markup
+->Semantic - relating to meaning
+->what purpose or roles does the html element have?
+->header, footer, nav, section they all have some meaning.
+->Make code to accessible to people who cannot see render content. they will access by screen reader.
+->Screen reader look for nav, header, footer element.
+->it helps to fix issues or add code when we use semantic elements like header, footer etc.
+
+->instead of division use more specific elements like
+1.<section>
+2.<article>
+3.<nav>
+4.<main>
+5.<header>
+6.<footer>
+7.<aside>
+8.<summary>
+9.<details>
+10.<time>
+11.<figure>
+
+1. <main> element 
+->The <main> HTML element represents the dominant content of the <body> of a document. 
+
+
+2.<nav> element
+The <nav> HTML element represents a section of a page whose purpose is to provide navigation links, either within the current document or to other documents.
+
+eg:
+<nav>
+    <ol>
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+    </ol>
+</nav>
+
+3. <section> element
+The <section> HTML element represents a generic standalone section of a document, which doesn't have a more specific semantic element to represent it.
+
+eg:
+<section>
+      <h1>ashish</h2>
+      <p>developer</p>
+</section>
+
+4.<article> element
+The <article> HTML element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication).
+
+5.<aside> element
+The <aside> HTML element represents a portion of a document whose content is only indirectly related to the document's main content.
+
+6.<header>
+The <header> HTML element represents introductory content, typically a group of introductory or navigational aids
+
+7. <footer>
+->The <footer> HTML element represents a footer for its nearest ancestor sectioning content or sectioning root element.
+
+->instead of using generic containers we follow semantics elements.
+->this is useful for developers immediately understanding code.
+->it is useful for screen readers.               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

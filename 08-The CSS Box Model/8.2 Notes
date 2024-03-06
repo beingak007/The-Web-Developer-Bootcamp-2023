@@ -1,0 +1,252 @@
+Section-8: The CSS Box Model
+->Everthing in css is a box. those boxes have differenet properties.
+
+84.1 The Box Model
+          Border
+         ______________________
+        |  Padding |           |
+  ____  |                      |
+        |    Content Box       |
+ Margin |                      |
+        |______________________|
+
+
+
+84.2 Width and height of element
+->width and height controls inner content area.
+->Content box - blue color.
+
+eg:
+div{
+    width: 200px;
+    height:200px;
+}
+
+85.  Box Model: Border and Border Radius
+
+1. Border Properties
+->The CSS border properties allow you to specify the style, width, and color of an element's border.
+
+->Important border properties
+1. Border Width - Contols the thinkness of the border
+2. Border-color - Controls the color of th border
+3. Border-Style - Controls the line style - Dashed, Solid etc.
+
+eg:
+
+border-style:dashed;
+border-left-color: #ffffff;
+
+->border over content box
+border-width:5px;
+border-color:black;
+border-style: solid;
+
+
+->width of the elements goes border to border.
+  box-sizing:border-box;
+
+
+1.2 Border Shorthand CSS Property
+->The border shorthand CSS property sets an element's border. It sets the values of border-width, border-style, and border-color.
+
+eg:
+/* style */
+border: solid;
+
+/* width | style */
+border: 2px dotted;
+
+/* style | color */
+border: outset #f33;
+
+/* width | style | color */
+border: medium dashed green;
+
+1.3 Border Radius
+The border-radius CSS property rounds the corners of an element's outer border edge. You can set a single radius to make circular corners, or two radii to make elliptical corners.
+
+eg:
+border-radius:10px;
+border-radius:20% 30% 40% 50%;
+border-radius:50%; ->Circle
+
+86- Box-Model:Padding
+->Padding is space between content box and actual border.
+
+->Padding Individual Properties 
+1. padding-left
+2. padding-right
+3. padding-bottom
+4. padding-top
+
+->Shorthand Property - set all four sides at once.
+Apply to all four sides -> padding:10px
+vertical | horizontal   -> padding:5px 10px;
+top | horizontal| bottom -> padding:1px 2px 2px;
+top | right | bottom | left -> padding:5px 1px 0 2px
+
+
+eg:
+h1{
+    padding-left: 100px;
+}
+
+87. Box Model: Margin
+->Margin is space outside of elements border between element and other element.
+->Padding is space inside the border.
+->Margin is space outside the border.
+->Orange is margin.
+
+eg:
+button{
+    margin-bottom: 10px;
+}
+
+->no space ->margin:0px;
+
+88. The Display Property
+1. Inline elements- Inline elements fit in alongside
+other elements.
+2. Block level elements take up a whole "block" of space.
+
+=>Display Property
+1. Inline
+->width and height are ignored.
+->Margin and padding push elements away horizontally
+but not veritcally.
+
+2. Block
+->Block elements break the flow of document.
+->Widht, height, margin, padding are respected.
+
+3. Inline-block
+->Behave like an inline element except width, height, margin and padding are respected.
+
+
+->Changing the property of inline or block level   elments by using display properties.
+eg-1
+->h1 is block level elements changed to inline.
+h1 {
+    background-color: aqua;
+    border:1px solid black;
+    display:inline;
+}
+
+eg-2
+span{
+    background-color: rgb(12, 197, 12);
+    border: 2px solid black;
+    display:block;
+}
+
+eg-3
+->div is behaving line inline elements.
+
+->Display none
+element will not display but it wil be in document.
+
+89. CSS Units
+1. Relative Units
+->EM
+->REM
+->VH
+->VW
+->%
+and more
+
+2. Absolute 
+->PX - by far most commonly used absolute unit.
+->PT
+->CM
+->IN
+->MM
+
+1. Percentages- 
+->Percentages are always relative to some other value.
+->sometimes, it's a value from the parent
+and other times it's value from the element itself.
+
+width- 50% ->half the width of the parent
+line-height- 50% -> half the font size of the element itself.
+
+=>Percentage relative to the parent.
+eg:
+=>html
+ <section>
+        <div>
+        </div>
+  </section>
+
+=>CSS
+section{
+    width: 800px;
+    height: 800px;
+    background-color: aqua;
+}
+div{
+   background-color: #f4a261;
+   width: 50%;
+   height:50%;
+}
+
+->div in above code will be 50% of the section.
+
+90. CSS Units EM's
+->EM's are relative units with font-size.
+->1em equals the font-size of the parent. 
+->2em equals the font-size of the parent.
+->with other properties, em is equal to the computed font size of the element itself.
+->if EM's are used then things scale as the font size
+changes.
+
+eg:
+/* Parent  */
+article{
+    font-size:30px;
+}
+
+/* child */
+h2{
+    font-size: 2em;
+}
+
+
+h2-> 2*em=2*30px=60px
+
+=>with other properties, em is equal to the computed font size of the element itself.
+article{
+    font-size:30px;
+}
+
+/* child */
+h2{
+    font-size: 2em;
+    margin-left:1em;    /*font-size:60px and mirgin-left:60px*/
+}
+
+->em in margin refers to font-size of the element.
+->em in font-size refers to font-size of parent.
+
+
+eg-2:
+->here font-size is depedent on the parent font-size.
+article{
+    font-size:30px;
+}
+button{
+    font-size: 1em;
+    padding:0 1em;
+    border-radius: 0.5em;
+    background-color: aquamarine;
+
+}
+
+91. CSS Units: rems1
+->Relative to the root html elements's font-size. 
+->Often easier to work with.
+->if the root font-size is 20px, 1 rem is always 20px, 2rem is always 40px etc.
+
+->if root html have font-size:20px then 1 rem is always 20px where ever in the document and what you nested inside of it.
+
+

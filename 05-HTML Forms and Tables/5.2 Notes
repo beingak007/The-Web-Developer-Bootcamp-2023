@@ -1,0 +1,364 @@
+=>HTML Forms and Tables
+1. Tables 
+Tables are structured sets of data. made up of rows and columns. they can be great way of displaying data
+clearly.
+
+Early usage
+->In the early days of the web. tables were commonly used to create page layouts. 
+->now we can use table element when we create actual data table.
+
+2. Tables: TR, TD and TH Elements
+1. <td> 
+The <td> HTML element defines a cell of a table that contains data. It participates in the table model.
+
+2. <tr>
+The <tr> HTML element defines a row of cells in a table. The row's cells can then be established using a mix of <td> (data cell) and <th> (header cell) elements.
+
+3.<th>
+The <th> HTML element defines a cell as the header of a group of table cells.
+
+eg:
+<table>
+
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Id No</th>
+            <th>Location</th>
+            <th>Company</th>
+        </tr>
+        <tr>
+            <td>Ashish</td>
+            <td>101</td>
+            <td>Hyderabad</td>
+            <td>Infosys</td>
+        </tr>
+</table>
+
+
+3. Tables: Thead, Tbody and Tfoot Elements
+i. <Thead> 
+The <thead> HTML element defines a set of rows defining the head of the columns of the table.
+
+ii. <tbody>
+The <tbody> HTML element encapsulates a set of table rows (<tr> elements), indicating that they comprise the body of the table (<table>).
+
+iii. <tfoot>
+The <tfoot> HTML element defines a set of rows summarizing the columns of the table.
+
+iv. rowspan attribute
+This attribute contains a non-negative integer value that indicates for how many rows the cell extends. 
+
+v. colspan
+This attribute contains a non-negative integer value that indicates for how many columns the cell extends. 
+
+
+
+eg:
+<table>
+        <thead>
+            <tr>
+                <th rowspan="2">Bird</th>
+                <th colspan="4">Average Mass</th>
+                <th rowspan="2">Flghted</th>
+            </tr>
+            <tr>
+                <th>KG</th>
+                <TH>LB</TH>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ostrich</td>
+                <td>104</td>
+                <td>230</td>
+                <td>No</td>  
+            </tr>
+        </tbody>
+</table>
+
+4. HTML Forms
+1. Creating Forms
+->The <form> element itself is a shell or container that doesn't have impact any visual impact.
+->we then fill the form with collection of inputs, checkboxes, button.
+
+2. <form> Elements
+->The from element "represents a document section containing interactive controls for submitting information.
+
+i. Action attribute
+->the action attribute specfies WHERE the form data should be sent.
+eg:
+->send form to my server
+
+->https://www.reddit.com/search/?q=tennis&type=link&cId=5c369c62-384f-405b-bc27-540ca5131c4b&iId=65df3dbb-3395-49de-b1ac-de733debca6d
+
+->when we send a form a http request will be sent.
+->we can control where that request goes to by using action attribute.
+
+ii. Method attributr
+
+->The method attribute specfies which HTTP method should be used.
+method="get" 
+method="post"
+
+
+5. Common Input Types
+i. <input> element
+The <input> HTML element is used to create interactive controls for web-based forms in order to accept data from the user.
+
+->the input element is used to create a variety of different form controls.
+->input doesn't have closing tag.
+
+->we have 20+ Possible types of inputs ranging from data picker to checkboxes.
+
+ii. type attribute - changing type dramatically alters the input's behavior and appearance.
+eg: 
+type="text"
+type="number"
+type="password"
+type="color"
+
+iii.  Placeholder - 
+->A placeholder is text that appears in the form control when it has no value set.
+->text shows before we type anything in inputs while it is empty.
+
+eg:<input type="text" placeholder="User Name">
+
+->it deoesn't work every single input.
+eg: color input
+->make to know what to type input.
+
+
+eg: froms
+ <from action="/search">
+        <input type="text" placeholder="User Name">
+        <input type="password" placeholder="Password">
+        <input type="color">
+        <input type="number" placeholder="Number">
+</from>
+
+
+iv. <label>: The Label element
+->The <label> HTML element represents a caption for an item in a user interface.
+->Label element associate direct connection with some input and form control, some piece of text.
+
+6. connecting label to input
+1. id attribute in input element
+eg: id=" " 
+
+2. for attribute in label element
+eg: for=" "
+
+->value of id and for attribute are same.
+->one element on a page should have given id.
+
+eg:
+    <form>
+        <label for="name">Enter a Username:</label>
+        <input type="text" id="name">
+    </form>
+
+    or
+=>Nesting input in label
+    <form>
+        <label Enter a Username:<input type="text" id="name"></label>   
+    </form>
+
+
+7.<button>  Element
+->The <button> HTML element is an interactive    element  activated by a user with a mouse, keyboard, finger, voice command, or other assistive technology. Once activated, it then performs an action, such as submitting a form or opening a dialog.
+
+eg-1:
+->Making button to submit by setting type value to submit
+<button type="submit">Submit</button>
+              or
+ <input type="submit" value="Click me">
+
+
+eg-2:
+->making button not submitting anything by setting type to button.
+<button type="button">Submit</button>
+
+8. The Name Attribute
+->name used to send the data to server.
+
+eg:
+<p>
+    <label for="Username">Username:</label>
+    <input type="text" placeholder="Username" id="Username" name="Username"><br>
+</p>
+
+-> http://127.0.0.1:5500/search?Username=Ashish
+
+->Username is the name used to send the data to server.
+
+9. "Hijacking" Google & Reddit's Search
+->Building own search form for reddit, google and     youtube. 
+->sending data to their server from our form 
+  and end up getting asearch page.
+  eg:
+    <form action="https://www.reddit.com/search">
+        <labe for="search">Reddit Search</labe><br>
+        <input type="text" name="q" id="search">
+        <button>Search on Reddit</button>
+
+    </form>
+
+
+10. Radio Buttons, Checkboxes, & Selects
+
+1. Checkboxes
+<input> elements of type checkbox are rendered by default as boxes that are checked (ticked) when activated, like you might see in an official government paper form.
+
+->if checkbox has to be checked before then use checked in input.
+eg:
+ <input type="checkbox" name="agree_tos"id="agree" checked>
+
+
+ 2. Radio Buttons
+ <input> elements of type radio are generally used in radio groups—collections of radio buttons describing a set of related options.
+
+->Only one radio button in a given group can be
+selected at the same time.
+ -><input type="radio">
+
+ ->Associating radio butttons by giving using name attribute.
+ eg:
+ <input type="radio" name="color" id="color1">
+<label for="color1">Red</label><br>
+
+<input type="radio" name="color" id="color2">
+<label for="color2">green</label><br>
+
+=>Value Attribute
+The value attribute defines the unique value associated with each radio button. The value is not shown to the user, but is the value that is sent to the server on "submit" to identify which radio button that was selected.
+
+Observe url in both cases.
+=>Before using value attribute in input 
+<h2>Select one color</h2>
+            <input type="radio" name="color" id="color1" >
+            <label for="color1">Red</label><br>
+
+            <input type="radio" name="color" id="color2" >
+            <label for="color2">Green</label><br>
+http://127.0.0.1:5500/birds?agree_tos=on&color=on
+
+=>After using value attribute in input
+   <h2>Select one color</h2>
+    <input type="radio" name="color" id="color1" value="Red">
+    <label for="color1">Red</label><br>
+
+    <input type="radio" name="color" id="color2" value="Green">
+    <label for="color2">Green</label><br>
+http://127.0.0.1:5500/birds?agree_tos=on&color=Green
+
+3. Select Element
+->The <select> HTML element represents a control that provides a menu of options.
+
+eg:
+   <label for="Pet_select">Choose a pet</label>
+        <select name="Pets" id="Pet_select">
+            <option>--Please choose an option--</option>
+            <option value="Dog">Dog</options>
+            <option value="Cat">Cat</option>
+            <option value="Rabbit">Rabbit</option>
+        </select>
+
+->We can also have pre selected. Use selected in option.
+ <label for="Pet_select">Choose a pet</label>
+        <select name="Pets" id="Pet_select">
+            <option>--Please choose an option--</option>
+            <option value="Dog" selected>Dog</options>
+            <option value="Cat">Cat</option>
+            <option value="Rabbit">Rabbit</option>
+ </select>
+
+
+ 11. Range and Text Area
+ 1. Range- <input type="range">
+ <input> elements of type range let the user specify a numeric value which must be no less than a given value, and no more than another given value. 
+
+->we can set min, max, step values.
+
+eg:
+<p>
+    <lable for="volume">Volume</lable>
+    <input type="range" id="volume" min="0" max="10" step="5">
+            
+</p>
+<button type="submit">Submit</button>
+
+2. Text Area Element
+The <textarea> HTML element represents a multi-line plain-text editing control, useful when you want to allow users to enter a sizeable amount of free-form text, for example a comment on a review or feedback form.
+
+->we can control intial rows and columns
+
+
+12. HTML5 Form Validation
+->Adding constraints or validating user inpur or data.
+eg:
+A password must be 7 characters.
+A password must numbers and symbols.
+
+
+
+i. Client side Validation
+Client-side validation is when the user input is validated by the browser before it is sent to the server.
+
+ii. Server side validation
+validation takes place at sever side. checks wheather data meet expectations.
+
+
+=>Built-in validations
+1. Required
+->The Boolean required attribute, if present, indicates that the user must specify a value for the input before the owning form can be submitted.
+
+->if required used we cannot submit form without giving input.
+eg:
+  <form action="/dummy">
+        <label for="username">Username:</label>
+        <input type="text" name="name" id="username"  required><br>
+        <button>Submit</button>
+    </form>
+
+
+->Character range can be set by using minlength and maxlength.
+eg:
+<form action="/dummy1">
+    <p>
+        <label for="name">Enter name:</label>
+        <input type="text" id="name" minlength="2" maxlength="7"><br>
+        <button>Submit</button>
+    </p>
+    
+    
+</form>
+
+
+->Email validation<h3>email validation</h3>
+<form action="/dummy3">
+    <p>
+        <label for="email">Enter number:</label>
+        <input type="email" id="email" required>
+        <button>Submit</button>
+    </p>
+</form>
+
+2. Pattern attribute
+3. <input type="url">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

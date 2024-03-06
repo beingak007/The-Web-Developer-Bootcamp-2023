@@ -1,0 +1,14 @@
+img{
+    width:30% ;
+    margin: calc(10%/6);
+
+}
+
+nav{
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+/*->taking 10% and dividing by 6 */
+/* 10/6=1.6666666 */

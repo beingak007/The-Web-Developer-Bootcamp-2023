@@ -1,0 +1,88 @@
+/* 1. universal selector */
+/* *{
+    color:blue;
+} */
+
+/* 2. Element selector */
+/* h1{
+    color:blueviolet;
+} */
+
+/* 3. Styling multiple elements */
+/* h1,h2{
+    color:blue;
+} */
+
+/*4. ID selector*/
+/* #search{
+    background-color: rgb(43, 226, 144);
+} */
+
+/* #submit{
+    background-color: aqua;
+} */
+
+/* 5. class selectors */
+/* .important{
+    background-color: aqua;
+} */
+
+/* 6.descendent selector */
+/* div p{
+    color:rgb(255, 0, 0);
+} */
+
+/* section span a{
+    color: rgb(255, 0, 0);
+
+} */
+
+/* 7. adjacenet selector */
+/* h2+p{
+ color:rgb(255, 0, 0);
+} */
+
+/* 8. direct child */
+/* footer>p{
+    color:darkviolet;
+} */
+
+/* 9. Pseudo code */
+
+/* p:hover{
+    color:rgb(100, 0, 0);
+    text-decoration: underline;
+    font-weight: bold;
+} */
+
+/* p:nth-of-type(2n){
+    color:red;
+} */
+
+/* p:active{
+    color:red;
+} */
+
+
+/* 10. Pseudo Elements */
+/* p::first-letter{
+  font-weight: bold;
+} */
+
+/* p::before {
+    content:"=>";
+  } */
+
+/* p::first-line{
+    color: rgb(255, 0, 0);
+} */
+
+/* 11.  CSS Inheritance */
+/* 
+body{
+   color:red;
+}
+
+h2{
+    color:blue;
+} */

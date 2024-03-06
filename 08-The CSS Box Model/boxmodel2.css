@@ -1,0 +1,37 @@
+/* h1 {
+    background-color: aqua;
+    border:1px solid black;
+    display:inline;
+}
+
+span{
+    background-color: rgb(12, 197, 12);
+    border: 2px solid black;
+    display:block;
+} */
+
+/* ->widht and height ignored in inline elements. */
+span{
+    background-color: palevioletred;
+    border:1px solid black;
+    width:500px;  /*ignored*/
+    padding:10px;
+    margin:50px;
+}
+
+h1{
+    background-color: palevioletred;
+    border:1px solid black;
+    width: 300px;  /*respected*/
+    padding:50px;  /*respected*/
+    margin:100px;  /*respected*/
+
+}
+
+div{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    border: 5px solid black;
+    display: inline-block;
+}

@@ -1,0 +1,432 @@
+
+Section-16: Javascript Decision Making
+163. Decision Making With Code?
+->doing something based on decisions.
+
+
+164. Comparison Operators
+1. >  - greater than 
+2. <  - less than
+3. >= - greater than or equal to
+4. <= - less than or equal to
+5. == - equalitiy
+6. != - not equal
+7. === - strict equalitiy
+8. !== - Strict not-equalitiy
+
+->All comparisions gives boolean results.
+->we can compare strings too.
+
+eg-1:
+1>2
+false
+
+eg-2:
+2>1
+true
+
+eg-3:
+let age=25;
+age>=18
+true
+age
+25
+
+eg-4:
+'A'=='a'
+false
+
+165. Equality: Triple Vs. Double Equals
+1. == (double equals)
+->checks for equalitiy of value, but not equalitiy of type.
+->it coerces both values to the same type and then compare them. it transform them into same type and compare them.
+->this can lead to some unexpected results!
+->when we work with same type we get correct results.
+->when working with different types it leads to some unexpected results.
+
+
+eg-1:
+1==1
+true
+
+eg-2: here data is converted to same type and compares.
+1=='1'
+true
+
+1.1 ==(double equals) Weirdness 
+ 5==5 -> true
+'b'=='c' -> false
+7=='7' -> true
+0==' '; -> true
+true==false -> false
+0==false -> true
+null==undefined -> true
+
+1. === (Triple equals)
+->it checks for equalitiy of value and type.
+->it's not going to attempt to coerces anything to same type.
+eg:
+5===5 -> true
+1===2 -> false
+2==='2' ->false
+false === 0;-> false  
+
+1===1 -> true
+1==='1' -> false
+
+->not equal
+1!=2   -> true
+1!='2' -> true
+
+
+
+->it coerces both values to the same type and then compare them.
+
+1!='1' -> false //not equal
+1!=='1' -> true //strictly not equal.
+
+166. Console, Alert, & Prompt
+->run code from Javascript file.
+1. Console.log() -> prints arguments to the console.
+->whatever given into this method it prints on console.
+
+eg:
+console.log("ashish") -> ashish
+
+2. console.warn('incorrect'); -> incorrect
+3. console.error('error');
+4. alert('hi there');
+->it gives alert on website page.
+
+5. Prompt() -> ask for argument on web page.
+-> it prints entered argument.
+->eg-1:
+prompt("please enter number")
+'1'
+
+eg-2:
+let userinput=prompt("Please enter a number")
+userinput
+'10'
+
+eg-2:
+let usernum=prompt("enter a num");
+undefined
+usernum
+'10'
+
+->1 becoming string and concatenating
+usernum+1
+'101'
+
+typeof(usernum)
+'string'
+
+->converting usernum(string)  to integer
+parseInt(usernum)
+10
+
+eg-3:
+parseInt("101")
+101
+
+eg-4:it extracts integer and returns it.
+parseInt("101adgfdsafa")
+101
+
+eg-5: 
+parseInt(usernum)
+10
+
+parseInt(usernum)+1
+11
+
+167. Running JavaScript From A Script!
+->running code from a file.
+->writing code in a .js file.
+->typing code in console good for testing quickly.
+->.js is extension for js file.
+->Make a js file. 
+->include or connect file in html document.
+->including script element in a .html file.
+eg: 
+html file -> index.html
+js file name-> app.js
+<head>
+    <script src="app.js"></script>
+</head>
+
+->placing script is element in head is not ideal placement.
+->usually it is placed at the end of the body.
+->in  order to load elements before script.
+
+<body
+    .
+    .
+    .
+    .
+    .
+    <script src="app.js"></script>
+</body>
+
+
+
+->we cannot write more than one line of code in console. the code goes after it get refresh.
+
+
+168. If Statements
+=>Conditionals - Making decisions with code.
+1. if Statements- 
+->only runs code if given condition is true.
+
+
+->if condition is not true then conditional code will not work but after condition it works.
+eg-1:
+console.log("before conditional");  //it works
+if(1+1==3){                      -->//it will not work
+    console.log("Math still works");
+}
+console.log("After conditional");   //it works
+
+eg-2:
+let randomNum=Math.random();
+
+if(randomNum<0.5){
+    console.log("your number is less than 0.5");
+    console.log(randomNum);
+}
+
+169. Else-If
+->The if...else statement executes a statement if a specified condition is truthy. If the condition is falsy, another statement in the optional else clause will be executed.
+// ->if if part is flase try other thing.
+
+eg-1:
+let rating=5;
+
+if(rating===3){
+    console.log("Meets expectation");
+}
+else if(rating==5){
+    console.log("you are super star");
+}
+
+Output:
+you are super star
+
+eg-2:
+const age=8;
+if(age<5){
+    console.log("you are baby, you get it for free");
+}
+else if(age<10){
+    console.log("you are baby, you get it for $10");
+}
+else if(age<65){
+    console.log("you are adult, you get it for free");
+}
+else if(age>65){
+    console.log("you are senior, you get it for $10");
+}
+
+// output:
+// you are baby, you get it for $10
+
+170. Else
+->if nothing else was true, do this.
+
+eg-1:
+let num=prompt("enter num");
+
+if(num>0){
+    console.log("positive number")
+}
+else if(num<0){
+    console.log("negative number")
+}
+else{
+    console.log("invalid");
+}
+
+
+171. Nesting Conditionals
+->we can need conditionals inside conditinals.
+
+eg-1:
+// const password=prompt("please enter password");
+// // ->password must be 6+ characters
+// if(password.length>=6){
+//   console.log("long enough password");
+// }else{
+//     console.log("password too short! must be 6+ characters");
+// }
+// // ->password cannot include space
+// if(password.indexOf(' '==-1)){
+//     console.log("Good job! No spaces");
+// }
+// else{
+//     console.log("Password cannot contain spaces!");
+// }
+
+//=>#using nested if
+const password=prompt("please enter password");
+// ->password must be 6+ characters
+if(password.length>=6){
+    // ->password cannot include space
+    if(password.indexOf(' ')==-1){
+        console.log("valid");
+    }
+    else{
+        console.log("Password cannot contain spaces!");
+    }
+    
+}else{
+    console.log("password too short! must be 6+ characters");
+}
+
+
+172. Truth-y & False-y Values
+-> All Js values have an inherent truthyness or falsyness about them
+->All these are inherently falsy
+->flase values:
+1. false
+2. 0
+3." "(empty string)
+4.null
+5.undefined
+6.NaN
+->Everthing else is truthy!
+
+
+
+1." " (empty strings are inherently falsy.)
+eg-1:
+->giving empty value
+const usernum=prompt("enter number");
+console.log(usernum);
+
+// ->In console
+usernum
+''
+// -> it's an empty string.
+
+// eg-2:
+// ->if value is empty then it is false in if block.
+// ->if string is given then it is true.
+
+const usernum=prompt("enter num");
+
+if(usernum){
+    console.log("Truthy");
+}
+else{
+    console.log("Falsy");
+}
+
+
+->if usernum is empty-> flase block get executed.
+->if string is given to usernum then truth block get executed.
+
+// eg-3:
+if(0){
+    console.log("Truthy");
+}
+else{
+    console.log("falsy");
+}
+
+Output:
+falsy
+
+
+173. Logical AND
+->these operators allow to combine different expressions.
+->we can combine more than one piece of logic to form larger logic.
+->three core logic operators are build in js
+1. && - and
+2. || - or
+3. !  - Not
+
+1. And Operator - &&
+->both must be true, for the entire thing to be true.
+
+eg-1:
+true && true
+true
+
+1==1 && 2<6
+true
+
+eg-2:
+ ->password must be 6+ characters
+ ->password cannot include space
+
+->console.log(password.indexOf(" ")) -> -1
+->if password.indexOf(" ") is equal to -1 it means string doesn't contain space.
+
+174. Logical OR - ||
+->if one side is true, the entire thing is true.
+
+eg-1:
+->In both situations it is free.
+// 0-5 free
+// 5-10 $10
+// 10-65 $20
+// 65+ free
+
+const age=90;
+if(age>0 && age<5 || age>=65){
+    console.log("free");
+}
+else if(age>=5 && age<10){
+    console.log("$10");
+}
+else if(age<65){
+    console.log("$20");
+}
+
+// Output:
+// free
+
+->In case of values between numbers use AND. Inisde pf range use zero.
+
+
+175. Logical NOT
+->!expression returns true if expression is false.
+
+eg-1:
+!null  ->true
+!false ->true
+!(0==0) -> false
+
+eg-2:
+let firstname=prompt("enter your first name");
+if(!firstname){
+    console.log("try again");
+}
+
+->empty string is falsy.
+
+
+176. The Switch Statement Is...A Lo
+->the switch statement is another control flow statemet that can replace multiple if statements.
+
+eg-1:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

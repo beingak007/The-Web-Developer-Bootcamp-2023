@@ -1,0 +1,35 @@
+h1 {
+    /* color:rgb(3, 152, 221); */
+    /* color:rgb(255,0,0); */
+    color: #c5e;
+    /* or */
+    /* color:#cc55ee; */
+    background-color: rgb(255, 128, 0);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+p {
+    color: black;
+    background-color: lightgreen;
+    text-align: justify;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-decoration: wavy;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    /* color:blue; */
+    color: rgb(252, 3, 3);
+    background-color: aqua;
+
+}

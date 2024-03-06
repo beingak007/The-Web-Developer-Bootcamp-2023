@@ -1,0 +1,22 @@
+To do project 
+
+Options
+1. "new"  - Add a todo
+2. "list" - List all tools
+3. "delete"- Remove specific todo
+4. "quit" - Quit App
+
+1. Add option
+->ask for adding to do.
+
+2. List option
+->list the elements that are added with index beside each todo.
+
+3. delete option
+->delete todo by index.
+->remove specific todo.
+
+->if it is Nan then print unkonwn index.
+
+4. Quit option
+->quiting app
